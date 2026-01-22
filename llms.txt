@@ -59,10 +59,10 @@ Also works with street motorcycles, adventure bikes, and ATVs/quads.
 
 ## Links
 
-- **Website:** https://dirttime.app
+- **Website:** https://dirttime.xyz
 - **App Store:** https://apps.apple.com/us/app/dirttime-bike-maintenance/id6752694574
-- **Support:** https://dirttime.app/#support
-- **Feedback:** https://dirttime.app/#feedback
+- **Support:** https://dirttime.xyz/#support
+- **Feedback:** https://dirttime.xyz/#feedback
 
 ## Contact
 
@@ -70,5 +70,5 @@ For support inquiries, visit the support page or submit feedback through the fee
 
 ## Legal
 
-- Privacy Policy: https://dirttime.app/#privacy
-- Terms of Service: https://dirttime.app/#terms
+- Privacy Policy: https://dirttime.xyz/#privacy
+- Terms of Service: https://dirttime.xyz/#terms
