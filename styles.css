@@ -374,6 +374,22 @@ body {
   font-size: 1rem;
 }
 
+/* App Store Badge */
+.app-store-badge {
+  display: inline-block;
+  transition: transform 0.3s var(--ease-out), opacity 0.3s ease;
+}
+
+.app-store-badge:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.app-store-badge img {
+  display: block;
+  height: auto;
+}
+
 /* ============================================
    iPhone Mockup
    ============================================ */

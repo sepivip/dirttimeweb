@@ -60,7 +60,7 @@ Also works with street motorcycles, adventure bikes, and ATVs/quads.
 ## Links
 
 - **Website:** https://dirttime.app
-- **App Store:** Available on iOS App Store (App ID: 6752694574)
+- **App Store:** https://apps.apple.com/us/app/dirttime-bike-maintenance/id6752694574
 - **Support:** https://dirttime.app/#support
 - **Feedback:** https://dirttime.app/#feedback
 
