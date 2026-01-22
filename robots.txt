@@ -1,0 +1,11 @@
+# DIRTTIME - Dirt Bike Maintenance Tracker
+# https://dirttime.app
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://dirttime.app/sitemap.xml
+
+# LLM-friendly content
+LLMs-txt: https://dirttime.app/llms.txt

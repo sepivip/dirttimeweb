@@ -1,0 +1,74 @@
+# DIRTTIME
+
+> Motorcycle and dirt bike maintenance tracking app for iOS
+
+DIRTTIME is a free iOS application designed for motorcycle and dirt bike enthusiasts to track maintenance schedules, log riding hours and mileage, and receive service alerts.
+
+## App Overview
+
+- **Name:** DIRTTIME
+- **Platform:** iOS (iPhone, iPad)
+- **Price:** Free
+- **Category:** Utilities / Automotive / Motorcycle
+
+## Supported Brands
+
+DIRTTIME works with all motorcycle and dirt bike brands including:
+
+- **KTM** - SX, EXC, XC-W, Freeride series
+- **Honda** - CRF, CRF-X, CRF-RX series
+- **Yamaha** - YZ, YZ-F, YZ-FX, WR series
+- **Husqvarna** - FC, FE, FX, TE, TX series
+- **Kawasaki** - KX, KLX series
+- **Suzuki** - RM-Z, DR-Z series
+- **GasGas** - MC, EC, EX series
+- **Beta** - RR, X-Trainer series
+- **Sherco** - SE, SEF series
+- **TM Racing** - MX, EN series
+
+Also works with street motorcycles, adventure bikes, and ATVs/quads.
+
+## Key Features
+
+1. **Maintenance Tracking** - Log all maintenance activities including oil changes, filter replacements, chain adjustments, valve checks, and more
+2. **Hour & Mileage Logging** - Track engine hours and distance for accurate service intervals
+3. **Service Alerts** - Get notified when maintenance is due based on hours, mileage, or time
+4. **Multiple Bikes** - Manage maintenance for multiple motorcycles in one app
+5. **Maintenance History** - Complete history of all work performed on each bike
+6. **Terrain Multipliers** - Adjust wear based on riding conditions (sand, mud, hard pack)
+7. **iOS Widgets** - Quick view of maintenance status from home screen
+
+## Use Cases
+
+- **Motocross racers** tracking race bike maintenance
+- **Enduro riders** monitoring service intervals
+- **Trail riders** keeping bikes in top condition
+- **Families** with multiple dirt bikes
+- **Mechanics** managing customer bikes
+- **Dealerships** tracking demo fleet maintenance
+
+## Target Audience
+
+- Dirt bike riders and racers
+- Motorcycle enthusiasts
+- Motocross (MX) and Supercross riders
+- Enduro and cross-country racers
+- Trail and recreational riders
+- Off-road vehicle owners
+- Two-stroke and four-stroke engine owners
+
+## Links
+
+- **Website:** https://dirttime.app
+- **App Store:** Available on iOS App Store (App ID: 6752694574)
+- **Support:** https://dirttime.app/#support
+- **Feedback:** https://dirttime.app/#feedback
+
+## Contact
+
+For support inquiries, visit the support page or submit feedback through the feedback form.
+
+## Legal
+
+- Privacy Policy: https://dirttime.app/#privacy
+- Terms of Service: https://dirttime.app/#terms

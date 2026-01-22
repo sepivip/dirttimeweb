@@ -3,313 +3,962 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DIRTTIME - The ultimate dirt bike maintenance tracker. Track hours, mileage, and never miss a service interval again.">
-  <meta name="keywords" content="dirt bike, maintenance tracker, motorcycle service, motocross, enduro, off-road">
+
+  <!-- Primary Meta Tags -->
+  <title>DIRTTIME - Motorcycle & Dirt Bike Maintenance Tracker App for iOS</title>
+  <meta name="title" content="DIRTTIME - Motorcycle & Dirt Bike Maintenance Tracker App for iOS">
+  <meta name="description" content="Track motorcycle and dirt bike maintenance with DIRTTIME. Log hours, mileage, schedule service intervals, get alerts. Works with KTM, Honda, Yamaha, Husqvarna, Kawasaki, Suzuki, GasGas & more. Free iOS app.">
+  <meta name="keywords" content="motorcycle maintenance tracker, dirt bike maintenance app, motocross service tracker, enduro maintenance, bike hours tracker, service interval app, KTM maintenance, Honda CRF maintenance, Yamaha YZ maintenance, Kawasaki KX maintenance, Suzuki RM-Z maintenance, Husqvarna maintenance, GasGas maintenance, Beta motorcycle, Sherco maintenance, off-road bike tracker, MX bike service, trail bike maintenance, supercross maintenance, two-stroke maintenance, four-stroke service">
   <meta name="author" content="DIRTTIME">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="theme-color" content="#0a0a0a">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="DIRTTIME - Dirt Bike Maintenance Tracker">
-  <meta property="og:description" content="Track. Maintain. Ride. The ultimate maintenance tracker for dirt bikes.">
-  <meta property="og:image" content="images/app-icon.png">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://dirttime.app/">
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dirttime.app/">
+  <meta property="og:title" content="DIRTTIME - Motorcycle & Dirt Bike Maintenance Tracker">
+  <meta property="og:description" content="Track. Maintain. Ride. The ultimate maintenance tracker for motorcycles and dirt bikes. Works with KTM, Honda, Yamaha, Husqvarna, Kawasaki & more.">
+  <meta property="og:image" content="https://dirttime.app/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="DIRTTIME">
+  <meta property="og:locale" content="en_US">
 
-  <!-- iOS Smart App Banner -->
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://dirttime.app/">
+  <meta name="twitter:title" content="DIRTTIME - Motorcycle & Dirt Bike Maintenance Tracker">
+  <meta name="twitter:description" content="Track. Maintain. Ride. The ultimate maintenance tracker for motorcycles and dirt bikes. Works with KTM, Honda, Yamaha, Husqvarna, Kawasaki & more.">
+  <meta name="twitter:image" content="https://dirttime.app/images/og-image.png">
+
+  <!-- Apple -->
   <meta name="apple-itunes-app" content="app-id=6752694574">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="DIRTTIME">
 
-  <title>DIRTTIME - Dirt Bike Maintenance Tracker</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/png" href="images/app-icon.png">
-  <link rel="apple-touch-icon" href="images/app-icon.png">
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="images/icon.png">
+  <link rel="apple-touch-icon" href="images/icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DIRTTIME",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "iOS",
+    "description": "The ultimate motorcycle and dirt bike maintenance tracker. Track hours, mileage, schedule service intervals for KTM, Honda, Yamaha, Husqvarna, Kawasaki, Suzuki, GasGas, Beta, and more.",
+    "url": "https://dirttime.app/",
+    "downloadUrl": "https://apps.apple.com/app/dirttime-bike-maintenance/id6752694574",
+    "softwareVersion": "2.0.2",
+    "author": {
+      "@type": "Organization",
+      "name": "DIRTTIME"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "ratingCount": "1"
+    },
+    "featureList": [
+      "Track engine hours and mileage",
+      "Smart maintenance scheduling",
+      "Service alerts and reminders",
+      "Terrain-based wear multipliers",
+      "Complete service history logging",
+      "iOS home screen widgets",
+      "Multiple motorcycle support",
+      "Local data storage for privacy",
+      "Works with KTM, Honda, Yamaha, Husqvarna, Kawasaki, Suzuki, GasGas, Beta, Sherco"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DIRTTIME",
+    "url": "https://dirttime.app/",
+    "logo": "https://dirttime.app/images/icon.png",
+    "description": "DIRTTIME develops motorcycle and dirt bike maintenance tracking software for riders of KTM, Honda, Yamaha, Husqvarna, Kawasaki, Suzuki, GasGas, Beta, and other brands.",
+    "sameAs": []
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I add a new bike to DIRTTIME?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tap the + button on the Garage screen to add a new bike. Enter your bike's details including make, model, year, and current hours/mileage. You can also add a photo to help identify your bike at a glance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do maintenance intervals work in DIRTTIME?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DIRTTIME supports four types of maintenance intervals: Hours (service due after engine hours), Distance (service due after km or miles), Days (service due after calendar days), and Per Ride (tasks to check every ride)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do the status colors mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Green (OK) means service is not yet due. Yellow (Due Soon) means service will be due within 90% of the interval. Red (Overdue) means service is past due and should be addressed before your next ride."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I track multiple bikes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! DIRTTIME supports unlimited bikes. Each bike has its own maintenance schedule, service history, and ride logs. Perfect for families with multiple riders or racers with different bikes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data backed up?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DIRTTIME stores all data locally on your device for privacy. To protect against data loss, enable iCloud Backup on your device or regularly back up to your computer using Finder or iTunes."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <canvas id="webgl-canvas"></canvas>
+  <div class="grain-overlay"></div>
+
   <!-- Header -->
   <header class="header">
-    <div class="header-content">
-      <a href="index.html" class="logo">
-        <img src="images/app-icon.png" alt="DIRTTIME">
-        DIRTTIME
+    <div class="header-inner">
+      <a href="#" class="logo" data-nav="home">
+        <img src="images/icon.png" alt="" width="36" height="36">
+        <span>DIRTTIME</span>
       </a>
-      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
-      <div class="nav-backdrop" aria-hidden="true"></div>
-      <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
-        <a href="index.html" class="active" aria-current="page">Home</a>
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
+
+      <nav class="nav-center">
+        <a href="#support" data-nav="support">Support</a>
+        <a href="#feedback" data-nav="feedback">Feedback</a>
+        <a href="#privacy" data-nav="privacy">Privacy</a>
+        <a href="#terms" data-nav="terms">Terms</a>
       </nav>
+
+      <a href="https://apps.apple.com/ge/app/dirttime-bike-maintenance/id6752694574" class="nav-cta" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        App Store
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" aria-hidden="true">
+      <a href="#" data-nav="home">Home</a>
+      <a href="#support" data-nav="support">Support</a>
+      <a href="#feedback" data-nav="feedback">Feedback</a>
+      <a href="#privacy" data-nav="privacy">Privacy</a>
+      <a href="#terms" data-nav="terms">Terms</a>
+      <a href="https://apps.apple.com/ge/app/dirttime-bike-maintenance/id6752694574" class="mobile-cta" target="_blank" rel="noopener">Download App</a>
     </div>
   </header>
 
   <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container hero-content">
-        <img src="images/app-icon.png" alt="DIRTTIME App Icon" class="app-icon">
-        <h1>DIRTTIME</h1>
-        <p class="tagline">Track. Maintain. Ride.</p>
-        <p class="hero-description">
-          The ultimate maintenance tracker for your dirt bikes. Never miss a service interval,
-          track your ride hours and mileage, and keep your bikes running at peak performance.
-        </p>
-        <div class="hero-cta-group">
-          <a href="https://apps.apple.com/ge/app/dirttime-bike-maintenance/id6752694574" class="cta-button" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            Download Now
-          </a>
-          <span class="hero-cta-subtext">Available on the App Store</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="section section-dark">
-      <div class="container">
-        <h2 class="section-title">Everything You Need to <span>Keep Riding</span></h2>
-
-        <div class="features-grid">
-          <!-- Track Hours & Mileage -->
-          <div class="feature-card featured">
-            <div class="feature-icon">&#9201;</div>
-            <h3>Track Hours & Mileage</h3>
-            <p>Log every ride with hours and distance. DIRTTIME automatically calculates when your next service is due based on actual usage.</p>
+    <!-- ==================== HOME PAGE ==================== -->
+    <div id="page-home" class="page active">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Available on iOS
           </div>
-
-          <!-- Maintenance Scheduling -->
-          <div class="feature-card featured">
-            <div class="feature-icon">&#128736;</div>
-            <h3>Smart Maintenance Scheduling</h3>
-            <p>Set up maintenance tasks with flexible intervals - by hours, kilometers/miles, days, or per ride. Get reminded before things break.</p>
-          </div>
-
-          <!-- Service Alerts -->
-          <div class="feature-card featured">
-            <div class="feature-icon">&#128276;</div>
-            <h3>Overdue Service Alerts</h3>
-            <p>Never miss a service again. Visual status indicators show you exactly what's OK, due soon, or overdue at a glance.</p>
-            <div class="status-demo">
-              <span class="status-badge status-ok">&#10003; OK</span>
-              <span class="status-badge status-due">&#9888; Due Soon</span>
-              <span class="status-badge status-overdue">&#10007; Overdue</span>
-            </div>
-          </div>
-
-          <!-- Terrain Profiles -->
-          <div class="feature-card">
-            <div class="feature-icon">&#127956;</div>
-            <h3>Terrain-Aware Tracking</h3>
-            <p>Racing, sand, or mud? DIRTTIME adjusts maintenance intervals based on terrain severity - because an hour in the sand is harder on your bike than an hour on the trail.</p>
-          </div>
-
-          <!-- Multiple Bikes -->
-          <div class="feature-card">
-            <div class="feature-icon">&#127949;</div>
-            <h3>Unlimited Bikes</h3>
-            <p>Got a garage full? Track maintenance for all your bikes in one place. Each bike gets its own service history and maintenance schedule.</p>
-          </div>
-
-          <!-- Service History -->
-          <div class="feature-card">
-            <div class="feature-icon">&#128203;</div>
-            <h3>Complete Service History</h3>
-            <p>Keep a detailed log of every service performed. Know exactly when and at what hours/mileage each task was completed.</p>
-          </div>
-
-          <!-- Home Screen Widgets -->
-          <div class="feature-card">
-            <div class="feature-icon">&#128241;</div>
-            <h3>Home Screen Widgets</h3>
-            <p>Check your bike's status without opening the app. iOS widgets show maintenance status right on your home screen.</p>
-          </div>
-
-          <!-- Metric/Imperial -->
-          <div class="feature-card">
-            <div class="feature-icon">&#127760;</div>
-            <h3>Metric & Imperial</h3>
-            <p>Whether you track in kilometers or miles, DIRTTIME adapts to your preference. Switch anytime in settings.</p>
-          </div>
-
-          <!-- Dark Mode -->
-          <div class="feature-card">
-            <div class="feature-icon">&#127769;</div>
-            <h3>Dark & Light Mode</h3>
-            <p>A beautiful interface that adapts to your system preference. Easy on the eyes whether you're in the garage or out in the sun.</p>
+          <h1 class="hero-title">
+            Track. Maintain.<br><span class="accent">Ride.</span>
+          </h1>
+          <p class="hero-text">
+            The ultimate maintenance tracker for dirt bikes. Never miss a service interval again.
+          </p>
+          <div class="hero-actions">
+            <a href="https://apps.apple.com/ge/app/dirttime-bike-maintenance/id6752694574" class="btn btn-primary" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              Download Free
+            </a>
+            <a href="#features" class="btn btn-secondary">Learn More</a>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- App Preview Section -->
-    <section class="section section-dark">
-      <div class="container">
-        <h2 class="section-title">See It In <span>Action</span></h2>
-        <div class="screenshots-carousel-wrapper">
-          <div class="screenshots-carousel">
-            <div class="screenshot-item">
-              <img src="images/screenshot-1.png" alt="DIRTTIME App Screenshot 1" loading="lazy">
+        <!-- iPhone Mockup -->
+        <div class="hero-phones">
+          <div class="iphone-stack">
+            <!-- Background phones -->
+            <div class="iphone iphone-back-left">
+              <div class="iphone-screen">
+                <img src="images/screenshots/photo_2026-01-21_16-05-50.jpg" alt="Bike details view" loading="eager">
+              </div>
             </div>
-            <div class="screenshot-item">
-              <img src="images/screenshot-2.png" alt="DIRTTIME App Screenshot 2" loading="lazy">
+            <div class="iphone iphone-back-right">
+              <div class="iphone-screen">
+                <img src="images/screenshots/photo_2026-01-21_16-05-47.jpg" alt="Activity log" loading="eager">
+              </div>
             </div>
-            <div class="screenshot-item">
-              <img src="images/screenshot-3.png" alt="DIRTTIME App Screenshot 3" loading="lazy">
+            <!-- Main phone -->
+            <div class="iphone iphone-main">
+              <div class="iphone-notch"></div>
+              <div class="iphone-screen">
+                <img src="images/screenshots/photo_2026-01-21_16-05-55.jpg" alt="DIRTTIME Garage" loading="eager">
+              </div>
             </div>
-            <div class="screenshot-item">
-              <img src="images/screenshot-4.png" alt="DIRTTIME App Screenshot 4" loading="lazy">
-            </div>
-            <div class="screenshot-item">
-              <img src="images/screenshot-5.png" alt="DIRTTIME App Screenshot 5" loading="lazy">
-            </div>
-            <div class="screenshot-item">
-              <img src="images/screenshot-6.png" alt="DIRTTIME App Screenshot 6" loading="lazy">
-            </div>
-            <div class="screenshot-item">
-              <img src="images/screenshot-7.png" alt="DIRTTIME App Screenshot 7" loading="lazy">
-            </div>
-            <div class="screenshot-item">
-              <img src="images/screenshot-8.png" alt="DIRTTIME App Screenshot 8" loading="lazy">
-            </div>
-            <div class="screenshot-item">
-              <img src="images/screenshot-9.png" alt="DIRTTIME App Screenshot 9" loading="lazy">
-            </div>
-            <div class="screenshot-item">
-              <img src="images/screenshot-10.png" alt="DIRTTIME App Screenshot 10" loading="lazy">
-            </div>
-          </div>
-          <p class="scroll-hint">Swipe to see more</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">How It <span>Works</span></h2>
-
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">1</div>
-            <h3>Add Your Bikes</h3>
-            <p>Enter your bike details including current hours and mileage. Add a photo to make it easy to identify in your garage.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">2</div>
-            <h3>Set Up Maintenance</h3>
-            <p>Configure maintenance tasks with your preferred intervals. Use our defaults or customize based on your manual and riding style.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">3</div>
-            <h3>Log Your Rides</h3>
-            <p>After each ride, log your hours and distance. DIRTTIME tracks what's due and alerts you when service is needed.</p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- CTA Section -->
-    <section class="section section-dark">
-      <div class="container text-center">
-        <h2 class="section-title">Ready to <span>Ride Smarter</span>?</h2>
-        <p class="hero-description">Download DIRTTIME today and take the guesswork out of motorcycle maintenance.</p>
-        <div class="hero-cta-group">
-          <a href="https://apps.apple.com/ge/app/dirttime-bike-maintenance/id6752694574" class="cta-button" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            Get Started
-          </a>
-          <span class="hero-cta-subtext">Available on the App Store</span>
+      <!-- Features -->
+      <section id="features" class="section">
+        <div class="container">
+          <header class="section-header">
+            <span class="section-label">Features</span>
+            <h2 class="section-title">Everything You Need</h2>
+            <p class="section-text">Built for riders who care about their machines</p>
+          </header>
+
+          <div class="features-grid">
+            <article class="feature-card">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/>
+                </svg>
+              </div>
+              <h3>Track Hours &amp; Mileage</h3>
+              <p>Log every ride with automatic service calculations.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+              </div>
+              <h3>Smart Scheduling</h3>
+              <p>Flexible intervals by hours, distance, or days.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                </svg>
+              </div>
+              <h3>Service Alerts</h3>
+              <p>Get notified before maintenance is overdue.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <h3>Terrain Profiles</h3>
+              <p>Adjusted intervals for racing, sand, or mud.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+              </div>
+              <h3>Service History</h3>
+              <p>Complete log of every maintenance performed.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+                </svg>
+              </div>
+              <h3>Home Widgets</h3>
+              <p>Check status right from your home screen.</p>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <!-- App Preview -->
+      <section class="section showcase">
+        <div class="container">
+          <header class="section-header">
+            <span class="section-label">Preview</span>
+            <h2 class="section-title">See It In Action</h2>
+          </header>
+        </div>
+        <div class="screenshots-track">
+          <div class="screenshots-slider">
+            <div class="screenshot"><img src="images/screenshot-1.png" alt="Dashboard" width="200" height="400" loading="lazy"></div>
+            <div class="screenshot"><img src="images/screenshot-2.png" alt="Bike List" width="200" height="400" loading="lazy"></div>
+            <div class="screenshot"><img src="images/screenshot-3.png" alt="Maintenance" width="200" height="400" loading="lazy"></div>
+            <div class="screenshot"><img src="images/screenshot-4.png" alt="Add Ride" width="200" height="400" loading="lazy"></div>
+            <div class="screenshot"><img src="images/screenshot-5.png" alt="Settings" width="200" height="400" loading="lazy"></div>
+            <div class="screenshot"><img src="images/screenshot-6.png" alt="Profile" width="200" height="400" loading="lazy"></div>
+            <div class="screenshot"><img src="images/screenshot-7.png" alt="History" width="200" height="400" loading="lazy"></div>
+            <div class="screenshot"><img src="images/screenshot-8.png" alt="Details" width="200" height="400" loading="lazy"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="section steps">
+        <div class="container">
+          <header class="section-header">
+            <span class="section-label">Getting Started</span>
+            <h2 class="section-title">How It Works</h2>
+          </header>
+
+          <div class="steps-grid">
+            <article class="step-card">
+              <span class="step-number">1</span>
+              <h3>Add Your Bikes</h3>
+              <p>Enter bike details with current hours and mileage.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-number">2</span>
+              <h3>Set Maintenance</h3>
+              <p>Configure tasks with your preferred intervals.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-number">3</span>
+              <h3>Log &amp; Ride</h3>
+              <p>Log rides and get alerts when service is due.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section cta">
+        <div class="container">
+          <div class="cta-content">
+            <h2 class="cta-title">Ready to Ride Smarter?</h2>
+            <p class="cta-text">Download DIRTTIME free and take the guesswork out of maintenance.</p>
+            <a href="https://apps.apple.com/ge/app/dirttime-bike-maintenance/id6752694574" class="btn btn-primary btn-large" target="_blank" rel="noopener">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              Download for iOS
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== SUPPORT PAGE ==================== -->
+    <div id="page-support" class="page">
+      <section class="page-header">
+        <div class="container">
+          <h1>Support</h1>
+          <p class="subtitle">We're here to help you keep your bikes running smoothly</p>
+        </div>
+      </section>
+
+      <section class="page-content">
+        <div class="container">
+          <div class="content-card">
+            <!-- Contact Card -->
+            <div class="contact-card">
+              <h2>Contact Us</h2>
+              <p>Have a question, found a bug, or want to suggest a feature? We'd love to hear from you.</p>
+              <a href="#feedback" class="btn btn-primary" style="margin-top: 16px;" data-nav="feedback">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+                </svg>
+                Send Feedback
+              </a>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+              <h2>Frequently Asked Questions</h2>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">How do I add a new bike?</button>
+                <div class="faq-answer" hidden>
+                  <p>Tap the "+" button on the Garage screen to add a new bike. Enter your bike's details including make, model, year, and current hours/mileage. You can also add a photo to help identify your bike at a glance.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">How do maintenance intervals work?</button>
+                <div class="faq-answer" hidden>
+                  <p>DIRTTIME supports four types of maintenance intervals:</p>
+                  <ul>
+                    <li><strong>Hours:</strong> Service is due after a certain number of engine hours (e.g., oil change every 15 hours)</li>
+                    <li><strong>Distance:</strong> Service is due after traveling a certain distance in km or miles</li>
+                    <li><strong>Days:</strong> Service is due after a certain number of days (e.g., annual inspections)</li>
+                    <li><strong>Per Ride:</strong> Tasks that should be checked before or after every ride</li>
+                  </ul>
+                  <p>You can customize intervals based on your owner's manual or riding conditions.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">What do the status colors mean?</button>
+                <div class="faq-answer" hidden>
+                  <p>DIRTTIME uses three status indicators:</p>
+                  <ul>
+                    <li><strong style="color: #02EE60;">OK (Green):</strong> Service is not yet due. You're good to ride!</li>
+                    <li><strong style="color: #f59e0b;">Due Soon (Yellow):</strong> Service will be due soon (within 90% of the interval). Plan to service soon.</li>
+                    <li><strong style="color: #D41414;">Overdue (Red):</strong> Service is past due. Address this before your next ride.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">How do terrain multipliers work?</button>
+                <div class="faq-answer" hidden>
+                  <p>Riding in harsh conditions wears on your bike more than normal trail riding. DIRTTIME adjusts maintenance calculations based on terrain:</p>
+                  <ul>
+                    <li><strong>Sand:</strong> 70% multiplier (1 hour in sand = 1.4 hours of wear)</li>
+                    <li><strong>Mud & Water:</strong> 80% multiplier (1 hour = 1.25 hours of wear)</li>
+                    <li><strong>Racing:</strong> 85% multiplier (1 hour = 1.17 hours of wear)</li>
+                  </ul>
+                  <p>This helps ensure you service your bike more frequently when riding in demanding conditions.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">Can I switch between metric and imperial units?</button>
+                <div class="faq-answer" hidden>
+                  <p>Yes! Go to Settings and toggle between kilometers and miles. All your existing data will be converted automatically. You can switch anytime.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">How do I set up home screen widgets?</button>
+                <div class="faq-answer" hidden>
+                  <p>DIRTTIME includes iOS widgets that show your bike's maintenance status at a glance:</p>
+                  <ol>
+                    <li>Long-press on your home screen until apps jiggle</li>
+                    <li>Tap the "+" button in the top-left corner</li>
+                    <li>Search for "DIRTTIME" or scroll to find it</li>
+                    <li>Choose your preferred widget size</li>
+                    <li>Tap "Add Widget"</li>
+                  </ol>
+                  <p>The widget will automatically update to show maintenance status for your bikes.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">Is my data backed up?</button>
+                <div class="faq-answer" hidden>
+                  <p>DIRTTIME stores all data locally on your device. To protect against data loss:</p>
+                  <ul>
+                    <li>Enable iCloud Backup on your device (Settings > [Your Name] > iCloud > iCloud Backup)</li>
+                    <li>Or regularly back up to your computer using Finder (Mac) or iTunes (Windows)</li>
+                  </ul>
+                  <p>When you restore your device from a backup, your DIRTTIME data will be restored too.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">Can I track multiple bikes?</button>
+                <div class="faq-answer" hidden>
+                  <p>Yes! DIRTTIME supports unlimited bikes. Each bike has its own maintenance schedule, service history, and ride logs. Perfect for families with multiple riders or racers with different bikes for different conditions.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">How do I delete a bike or reset data?</button>
+                <div class="faq-answer" hidden>
+                  <p>To delete a bike, go to the bike's detail page, scroll to the bottom, and tap "Delete Bike." This will remove the bike and all associated service and ride logs.</p>
+                  <p>To reset all app data, uninstall and reinstall the app. This cannot be undone.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">Will there be Android support?</button>
+                <div class="faq-answer" hidden>
+                  <p>DIRTTIME is currently available on iOS only. We're evaluating Android support for the future. Sign up for our mailing list or follow us on social media for updates!</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tips Section -->
+            <h2 style="margin-top: 48px;">Tips & Troubleshooting</h2>
+
+            <div class="tips-grid">
+              <div class="tip-card">
+                <h3>App running slowly?</h3>
+                <p>Try closing and reopening the app. If issues persist, restarting your device often helps. Make sure you're running the latest version of iOS and DIRTTIME.</p>
+              </div>
+
+              <div class="tip-card">
+                <h3>Widget not updating?</h3>
+                <p>Widgets refresh periodically based on iOS guidelines. Open the main app to force a data sync with the widget. If the widget still shows old data, try removing and re-adding it.</p>
+              </div>
+
+              <div class="tip-card">
+                <h3>Want to suggest a feature?</h3>
+                <p>We're always looking to improve! Use our <a href="#feedback" data-nav="feedback">feedback form</a> to send your feature requests. We read every submission.</p>
+              </div>
+
+              <div class="tip-card">
+                <h3>Found a bug?</h3>
+                <p>Please report bugs with: what you were doing, what you expected, what happened, and your device/iOS version. Screenshots help!</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== FEEDBACK PAGE ==================== -->
+    <div id="page-feedback" class="page">
+      <section class="page-header">
+        <div class="container">
+          <h1>Feedback</h1>
+          <p class="subtitle">Help us make DIRTTIME better</p>
+        </div>
+      </section>
+
+      <section class="page-content">
+        <div class="container">
+          <div class="feedback-card">
+            <p class="feedback-intro">Have a question, found a bug, or want to suggest a feature? We'd love to hear from you. Fill out the form below and we'll get back to you.</p>
+
+            <!-- Google Form Embed -->
+            <div class="form-container">
+              <!-- Replace the src with your Google Form embed URL -->
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSeZ3ueMiClBQxvc-g0rqhQhVFReEPRXngsp38OJ5bmMNSantw/viewform?embedded=true"
+                width="100%"
+                height="800"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                title="Feedback Form"
+                loading="lazy">
+                Loading form...
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PRIVACY PAGE ==================== -->
+    <div id="page-privacy" class="page">
+      <section class="page-header">
+        <div class="container">
+          <h1>Privacy Policy</h1>
+          <p class="subtitle">How we handle your data</p>
+        </div>
+      </section>
+
+      <section class="page-content">
+        <div class="container">
+          <div class="content-card">
+            <span class="date">Last updated: January 13, 2025</span>
+
+            <p>
+              DIRTTIME ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our DIRTTIME mobile application (the "App").
+            </p>
+
+            <h2>Information We Collect</h2>
+
+            <h3>Data You Provide</h3>
+            <p>When you use DIRTTIME, you may provide the following information:</p>
+            <ul>
+              <li><strong>Bike Information:</strong> Details about your motorcycles including make, model, year, current hours, and mileage</li>
+              <li><strong>Maintenance Records:</strong> Service logs, maintenance tasks, and completion dates</li>
+              <li><strong>Ride Logs:</strong> Information about your rides including hours ridden, distance traveled, and terrain type</li>
+              <li><strong>Photos:</strong> Images you choose to associate with your bikes</li>
+            </ul>
+
+            <h3>Automatically Collected Information</h3>
+            <p>
+              DIRTTIME does not automatically collect personal information, analytics data, or usage statistics. We do not use any third-party analytics or tracking services.
+            </p>
+
+            <h2>Data Storage</h2>
+
+            <h3>Local Storage Only</h3>
+            <p>
+              <strong>All your data is stored locally on your device.</strong> DIRTTIME does not transmit your bike information, maintenance records, ride logs, or photos to any external servers. Your data remains entirely on your iPhone or iPad.
+            </p>
+            <p>
+              We use Apple's built-in storage systems (AsyncStorage and App Groups for widget functionality) to securely store your data on your device.
+            </p>
+
+            <h3>No Cloud Sync</h3>
+            <p>
+              DIRTTIME does not currently offer cloud synchronization. This means:
+            </p>
+            <ul>
+              <li>Your data is not backed up to our servers</li>
+              <li>We cannot access, view, or recover your data</li>
+              <li>Your data stays private and under your control</li>
+            </ul>
+            <p>
+              <strong>Important:</strong> We recommend using your device's built-in backup features (iCloud Backup or iTunes/Finder backup) to protect against data loss.
+            </p>
+
+            <h2>Third-Party Services</h2>
+
+            <p>DIRTTIME does not integrate with or share data with any third-party services, including:</p>
+            <ul>
+              <li>Analytics providers</li>
+              <li>Advertising networks</li>
+              <li>Social media platforms</li>
+              <li>Crash reporting services</li>
+            </ul>
+
+            <h2>Device Permissions</h2>
+
+            <p>DIRTTIME may request the following permissions:</p>
+            <ul>
+              <li><strong>Camera/Photo Library:</strong> Used only if you choose to add photos of your bikes. Photos are stored locally on your device and are never uploaded or shared.</li>
+            </ul>
+            <p>
+              All permissions are optional and the app functions fully without granting them.
+            </p>
+
+            <h2>Data Security</h2>
+
+            <p>
+              Since all data is stored locally on your device, security is provided by:
+            </p>
+            <ul>
+              <li>Apple's iOS security features and encryption</li>
+              <li>Your device passcode, Face ID, or Touch ID protection</li>
+              <li>App sandboxing that prevents other apps from accessing DIRTTIME's data</li>
+            </ul>
+
+            <h2>Children's Privacy</h2>
+
+            <p>
+              DIRTTIME is not directed at children under the age of 13. We do not knowingly collect personal information from children. Since all data is stored locally and never transmitted, no children's data is collected by us.
+            </p>
+
+            <h2>Your Rights</h2>
+
+            <h3>Data Access and Deletion</h3>
+            <p>
+              Since all data is stored locally on your device, you have complete control over your information:
+            </p>
+            <ul>
+              <li><strong>Access:</strong> All your data is visible within the app at any time</li>
+              <li><strong>Modification:</strong> You can edit or update any information in the app</li>
+              <li><strong>Deletion:</strong> You can delete individual bikes, logs, or tasks within the app. To delete all data, simply uninstall the app from your device.</li>
+              <li><strong>Export:</strong> Your data remains on your device and can be preserved through iOS backups</li>
+            </ul>
+
+            <h2>Changes to This Policy</h2>
+
+            <p>
+              We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
+            </p>
+            <p>
+              We encourage you to review this Privacy Policy periodically for any changes. Your continued use of the App after any modifications indicates your acceptance of the updated Privacy Policy.
+            </p>
+
+            <h2>Contact Us</h2>
+
+            <p>
+              If you have any questions or concerns about this Privacy Policy or our data practices, please visit our <a href="#support" data-nav="support">Support page</a> for contact options.
+            </p>
+
+            <h2>California Privacy Rights</h2>
+
+            <p>
+              If you are a California resident, you have specific rights regarding your personal information under the California Consumer Privacy Act (CCPA). Since DIRTTIME stores all data locally on your device and does not collect, sell, or share personal information with third parties, these rights are inherently protected by our privacy-first design.
+            </p>
+
+            <h2>European Privacy Rights (GDPR)</h2>
+
+            <p>
+              If you are located in the European Economic Area, you have certain rights under the General Data Protection Regulation (GDPR). Because DIRTTIME does not collect or process personal data on external servers, and all information remains on your device, you maintain full control over your data at all times.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== TERMS PAGE ==================== -->
+    <div id="page-terms" class="page">
+      <section class="page-header">
+        <div class="container">
+          <h1>Terms of Service</h1>
+          <p class="subtitle">Terms and conditions for using DIRTTIME</p>
+        </div>
+      </section>
+
+      <section class="page-content">
+        <div class="container">
+          <div class="content-card">
+            <span class="date">Last updated: January 13, 2025</span>
+
+            <p>
+              Please read these Terms of Service ("Terms") carefully before using the DIRTTIME mobile application (the "App") operated by DIRTTIME ("we," "us," or "our").
+            </p>
+            <p>
+              By downloading, installing, or using the App, you agree to be bound by these Terms. If you do not agree to these Terms, do not use the App.
+            </p>
+
+            <h2>1. Acceptance of Terms</h2>
+
+            <p>
+              By accessing or using DIRTTIME, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our <a href="#privacy" data-nav="privacy">Privacy Policy</a>. These Terms constitute a legally binding agreement between you and DIRTTIME.
+            </p>
+
+            <h2>2. Description of Service</h2>
+
+            <p>
+              DIRTTIME is a mobile application designed to help users track motorcycle maintenance, log rides, schedule service tasks, and manage maintenance reminders for their dirt bikes and motorcycles. The App provides:
+            </p>
+            <ul>
+              <li>Motorcycle and bike profile management</li>
+              <li>Hours and mileage tracking</li>
+              <li>Maintenance task scheduling and reminders</li>
+              <li>Service history logging</li>
+              <li>Ride logging with terrain considerations</li>
+              <li>Home screen widgets for iOS</li>
+            </ul>
+
+            <h2>3. User Responsibilities</h2>
+
+            <h3>3.1 Accurate Information</h3>
+            <p>
+              You are responsible for the accuracy of all information you enter into the App, including bike details, service records, and maintenance schedules.
+            </p>
+
+            <h3>3.2 Maintenance Decisions</h3>
+            <p>
+              DIRTTIME is a tracking and reminder tool only. You are solely responsible for:
+            </p>
+            <ul>
+              <li>Determining appropriate maintenance intervals for your specific motorcycle</li>
+              <li>Consulting your owner's manual and qualified mechanics for service requirements</li>
+              <li>Making all maintenance and repair decisions for your vehicles</li>
+              <li>Ensuring your motorcycle is safe and roadworthy</li>
+            </ul>
+
+            <h3>3.3 Data Backup</h3>
+            <p>
+              Since all data is stored locally on your device, you are responsible for backing up your data using iOS backup features. We cannot recover lost data.
+            </p>
+
+            <h2>4. Disclaimers</h2>
+
+            <h3>4.1 No Professional Advice</h3>
+            <p>
+              <strong>DIRTTIME does not provide professional mechanical, safety, or maintenance advice.</strong> The App's maintenance reminders and suggestions are general guidelines only and should not replace:
+            </p>
+            <ul>
+              <li>Your motorcycle's owner's manual recommendations</li>
+              <li>Advice from qualified mechanics and service professionals</li>
+              <li>Manufacturer service bulletins and recalls</li>
+              <li>Your own judgment based on riding conditions and bike condition</li>
+            </ul>
+
+            <h3>4.2 As-Is Service</h3>
+            <p>
+              THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+            </p>
+
+            <h3>4.3 No Guarantee of Accuracy</h3>
+            <p>
+              We do not warrant that:
+            </p>
+            <ul>
+              <li>The maintenance intervals suggested are appropriate for your specific motorcycle</li>
+              <li>The App will be error-free or uninterrupted</li>
+              <li>Defects will be corrected</li>
+              <li>The calculations and reminders will be accurate in all situations</li>
+            </ul>
+
+            <h2>5. Limitation of Liability</h2>
+
+            <p>
+              TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL DIRTTIME, ITS DEVELOPERS, AFFILIATES, OR LICENSORS BE LIABLE FOR ANY:
+            </p>
+            <ul>
+              <li>Personal injury, property damage, or accidents resulting from motorcycle maintenance decisions</li>
+              <li>Loss of data stored in the App</li>
+              <li>Indirect, incidental, special, consequential, or punitive damages</li>
+              <li>Loss of profits, revenue, or anticipated savings</li>
+              <li>Damage to your motorcycle or other property</li>
+            </ul>
+            <p>
+              This limitation applies regardless of the theory of liability (contract, tort, strict liability, or otherwise) and even if we have been advised of the possibility of such damages.
+            </p>
+
+            <h2>6. Indemnification</h2>
+
+            <p>
+              You agree to indemnify, defend, and hold harmless DIRTTIME and its developers from and against any claims, liabilities, damages, losses, and expenses (including reasonable attorneys' fees) arising out of or related to:
+            </p>
+            <ul>
+              <li>Your use of the App</li>
+              <li>Maintenance decisions you make based on information from the App</li>
+              <li>Your violation of these Terms</li>
+              <li>Your violation of any rights of another party</li>
+            </ul>
+
+            <h2>7. Intellectual Property</h2>
+
+            <p>
+              The App and its original content, features, and functionality are owned by DIRTTIME and are protected by international copyright, trademark, and other intellectual property laws. You may not:
+            </p>
+            <ul>
+              <li>Copy, modify, or distribute the App</li>
+              <li>Reverse engineer or decompile the App</li>
+              <li>Use the DIRTTIME name or logo without permission</li>
+              <li>Create derivative works based on the App</li>
+            </ul>
+
+            <h2>8. User Content</h2>
+
+            <p>
+              Any content you create in the App (bike profiles, service logs, photos, etc.) remains your property. Since this content is stored locally on your device, you retain full control over it.
+            </p>
+
+            <h2>9. App Store Terms</h2>
+
+            <p>
+              Your use of the App is also subject to the Apple App Store Terms of Service. In the event of a conflict between these Terms and Apple's terms, Apple's terms shall prevail with respect to your use of the App Store and Apple's services.
+            </p>
+
+            <h2>10. Termination</h2>
+
+            <p>
+              You may stop using the App at any time by uninstalling it from your device. We reserve the right to:
+            </p>
+            <ul>
+              <li>Modify or discontinue the App at any time</li>
+              <li>Refuse service to anyone for any reason</li>
+              <li>Remove the App from the App Store</li>
+            </ul>
+            <p>
+              Uninstalling the App will delete all locally stored data.
+            </p>
+
+            <h2>11. Changes to Terms</h2>
+
+            <p>
+              We reserve the right to modify these Terms at any time. We will notify users of material changes by:
+            </p>
+            <ul>
+              <li>Updating the "Last updated" date at the top of this page</li>
+              <li>Posting the revised Terms on this website</li>
+            </ul>
+            <p>
+              Your continued use of the App after any changes constitutes acceptance of the new Terms.
+            </p>
+
+            <h2>12. Governing Law</h2>
+
+            <p>
+              These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to its conflict of law provisions. Any disputes arising from these Terms or your use of the App shall be resolved in the courts of competent jurisdiction.
+            </p>
+
+            <h2>13. Severability</h2>
+
+            <p>
+              If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.
+            </p>
+
+            <h2>14. Entire Agreement</h2>
+
+            <p>
+              These Terms, together with our Privacy Policy, constitute the entire agreement between you and DIRTTIME regarding the use of the App and supersede any prior agreements.
+            </p>
+
+            <h2>15. Contact Information</h2>
+
+            <p>
+              If you have any questions about these Terms, please visit our <a href="#support" data-nav="support">Support page</a> for contact options.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-logo">
-        <img src="images/app-icon.png" alt="DIRTTIME">
-        DIRTTIME
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo" data-nav="home">
+            <img src="images/icon.png" alt="" width="28" height="28">
+            <span>DIRTTIME</span>
+          </a>
+          <p class="footer-tagline">Track. Maintain. Ride.</p>
+        </div>
+        <nav class="footer-nav">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="https://apps.apple.com/ge/app/dirttime-bike-maintenance/id6752694574" target="_blank" rel="noopener">Download</a>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <a href="#support" data-nav="support">Help Center</a>
+            <a href="#feedback" data-nav="feedback">Feedback</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="#privacy" data-nav="privacy">Privacy Policy</a>
+            <a href="#terms" data-nav="terms">Terms of Service</a>
+          </div>
+        </nav>
       </div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
+      <div class="footer-bottom">
+        <p>&copy; 2025 DIRTTIME. All rights reserved.</p>
+        <p class="version">Version 2.0.2</p>
       </div>
-      <p class="footer-copyright">
-        &copy; 2025 DIRTTIME. All rights reserved.<br>
-        Version 2.0.2
-      </p>
     </div>
   </footer>
 
-  <script>
-    // Mobile navigation toggle with accessibility
-    const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.nav');
-    const navBackdrop = document.querySelector('.nav-backdrop');
-
-    function openNav() {
-      nav.classList.add('active');
-      navBackdrop.classList.add('active');
-      navToggle.setAttribute('aria-expanded', 'true');
-      navToggle.setAttribute('aria-label', 'Close navigation menu');
-      document.body.classList.add('nav-open');
-    }
-
-    function closeNav() {
-      nav.classList.remove('active');
-      navBackdrop.classList.remove('active');
-      navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.setAttribute('aria-label', 'Open navigation menu');
-      document.body.classList.remove('nav-open');
-    }
-
-    navToggle.addEventListener('click', function() {
-      if (nav.classList.contains('active')) {
-        closeNav();
-      } else {
-        openNav();
-      }
-    });
-
-    // Close nav on backdrop click
-    navBackdrop.addEventListener('click', closeNav);
-
-    // Close nav on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && nav.classList.contains('active')) {
-        closeNav();
-        navToggle.focus();
-      }
-    });
-
-    // Close mobile nav when clicking a link
-    document.querySelectorAll('.nav a').forEach(link => {
-      link.addEventListener('click', closeNav);
-    });
-
-    // Scroll animations with Intersection Observer
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    // Observe all feature cards and section titles
-    document.querySelectorAll('.feature-card, .section-title').forEach(el => {
-      el.classList.add('animate-on-scroll');
-      observer.observe(el);
-    });
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
