@@ -42,6 +42,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -180,13 +181,19 @@ body {
   display: none;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 5px;
   padding: 12px;
   min-width: 44px;
   min-height: 44px;
   background: none;
   border: none;
+  border-radius: var(--radius-md);
   cursor: pointer;
+}
+
+.nav-toggle:focus-visible {
+  outline-offset: -2px;
 }
 
 .nav-toggle span {

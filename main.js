@@ -94,11 +94,14 @@
   const mobileMenu = document.querySelector('.mobile-menu');
 
   if (navToggle && mobileMenu) {
-    navToggle.addEventListener('click', () => {
+    navToggle.addEventListener('click', (e) => {
       const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
       navToggle.setAttribute('aria-expanded', !isExpanded);
       mobileMenu.classList.toggle('active');
       mobileMenu.setAttribute('aria-hidden', isExpanded);
+      if (e.pointerType === 'touch' || e.pointerType === 'mouse') {
+        navToggle.blur();
+      }
     });
 
     mobileMenu.querySelectorAll('a').forEach(link => {
