@@ -4,6 +4,21 @@
 - Static HTML website with CSS
 - Main pages: index.html, privacy.html, support.html, terms.html
 
+## Repo Is Public — Audit Before Pushing
+
+This repo is public. Before any `git push`, `gh pr create`, or equivalent, review every hunk of the staged diff. Never rely on commit messages or file names alone.
+
+Watch for: API keys, tokens, `.env` contents, internal URLs, email addresses, unreleased feature copy, TODO/FIXME comments with sensitive context, screenshots with private data, analytics IDs you don't want public.
+
+- Prefer `git add <specific files>` over `git add -A` / `git add .`.
+- If sensitive content is committed locally but not pushed, tell the user before amending or resetting — they decide the cleanup path.
+- If something sensitive is already pushed, treat it as leaked: rotate the secret, then plan history rewrite with user approval.
+- Applies even when the user says "just push it" — confirm the diff first, not the intent.
+
+## Design System
+
+The canonical design system lives in [DESIGN.md](DESIGN.md) (Google Labs design.md format). Treat its YAML tokens as the source of truth for colors, typography, radii, and spacing. Do not hardcode values that have a token — extend the scale in DESIGN.md first, then reflect the change in [styles.css](styles.css).
+
 ## Web Interface Guidelines
 
 Review these files for compliance. Output concise but comprehensive—sacrifice grammar for brevity. High signal-to-noise.
