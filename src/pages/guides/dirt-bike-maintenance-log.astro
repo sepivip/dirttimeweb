@@ -1,7 +1,9 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
-import { maintenanceLogPath, serviceCalculatorPath } from "../../site";
+import PrintResourceButton from "../../components/PrintResourceButton.astro";
+import { engineHoursGuidePath, maintenanceChecklistPath, maintenanceLogPath, serviceCalculatorPath } from "../../site";
 import "../../styles/resources.css";
+import "../../styles/resource-print.css";
 import "../../styles/maintenance-print.css";
 
 const logColumns = ["Date", "Engine hours", "Odometer", "Work performed", "Parts and notes", "Next service due"];
@@ -23,7 +25,7 @@ const blankRows = Array.from({ length: 12 });
           <p>Print a one-page sheet for the garage or open the CSV in your spreadsheet. Keep one log per bike so its service history stays together.</p>
           <div class="resource-actions">
             <a class="btn btn-primary" href="/downloads/dirt-bike-maintenance-log.csv" download="dirt-bike-maintenance-log.csv">Download CSV</a>
-            <button class="btn btn-secondary" type="button" data-print-log hidden>Print Blank Log</button>
+            <PrintResourceButton label="Print Blank Log" />
           </div>
           <noscript><p>Use your browser’s Print command to print the blank log.</p></noscript>
         </section>
@@ -45,16 +47,17 @@ const blankRows = Array.from({ length: 12 });
       <section class="resource-card" aria-labelledby="record-title">
         <h2 id="record-title">What to Record After Each Service</h2>
         <ul class="resource-list">
-          <li>Write down the date and the engine hours or odometer reading when the work was done. If you record distance, mark whether it’s in miles or kilometers.</li>
+          <li>Write down the date and the engine hours or odometer reading when the work was done. If you record distance, mark whether it’s in miles or kilometers. See <a href={engineHoursGuidePath}>engine hours vs. mileage</a> for help choosing what to track.</li>
           <li>Record the work and any parts used so you can find the details again when ordering replacements or handing over the bike.</li>
           <li>Write the next due reading beside the service. Use the <a href={serviceCalculatorPath}>service interval calculator</a> to work it out from the interval you follow.</li>
         </ul>
+        <p>Use the <a href={maintenanceChecklistPath}>printable maintenance checklist</a> alongside this log. Put repairs and completed service in the log and use the checklist for routine inspections.</p>
       </section>
     </div>
   </section>
 
-  <section class="maintenance-log-print" aria-labelledby="print-log-title">
-    <header>
+  <section class="resource-print-sheet resource-print-only maintenance-log-print" aria-labelledby="print-log-title">
+    <header class="print-sheet-header">
       <p class="print-brand">DIRTTIME</p>
       <h2 id="print-log-title">Dirt Bike Maintenance Log</h2>
       <p>Use one sheet per bike. Record the meter reading at each service.</p>
@@ -74,11 +77,3 @@ const blankRows = Array.from({ length: 12 });
     <p class="print-source">dirttime.xyz{maintenanceLogPath}</p>
   </section>
 </SiteLayout>
-
-<script>
-  const printLog = document.querySelector<HTMLButtonElement>("[data-print-log]");
-  if (printLog) {
-    printLog.addEventListener("click", () => window.print());
-    printLog.hidden = false;
-  }
-</script>

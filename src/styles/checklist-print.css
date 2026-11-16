@@ -1,0 +1,60 @@
+.checklist-sheet > .container {
+  max-width: 848px;
+}
+
+@media print {
+  .checklist-sheet {
+    padding: 0;
+  }
+
+  .checklist-sheet > .container {
+    display: block;
+    max-width: none;
+    padding: 0;
+  }
+
+  .checklist-sheet .checklist-group {
+    padding: 0;
+    margin: 12pt 0 0;
+    background: none;
+    border: 0;
+    break-inside: avoid;
+  }
+
+  .checklist-group h2,
+  .checklist-notes h2 {
+    font: 700 13pt/1.25 system-ui, sans-serif;
+  }
+
+  .checklist-group .checklist-items {
+    gap: 4pt;
+    margin-top: 5pt;
+    padding: 0;
+    list-style: none;
+  }
+
+  .checklist-sheet .checklist-items li {
+    display: grid;
+    grid-template-columns: 9pt minmax(0, 1fr);
+    gap: 7pt;
+    color: black;
+  }
+
+  .checklist-items li::before {
+    content: "";
+    width: 9pt;
+    height: 9pt;
+    margin-top: 2pt;
+    border: 0.75pt solid black;
+  }
+
+  .checklist-notes {
+    margin-top: 12pt;
+    break-inside: avoid;
+  }
+
+  .checklist-notes-line {
+    height: 20pt;
+    border-bottom: 0.75pt solid black;
+  }
+}

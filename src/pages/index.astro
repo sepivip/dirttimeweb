@@ -1,6 +1,6 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
-import { appStoreBadgeLink, maintenanceLogPath, serviceCalculatorPath } from "../site";
+import { appStoreBadgeLink, engineHoursGuidePath, maintenanceChecklistPath, maintenanceLogPath, serviceCalculatorPath } from "../site";
 import "../styles/resources.css";
 ---
 <SiteLayout route="/">
@@ -201,6 +201,16 @@ import "../styles/resources.css";
           <h3>Service Interval Calculator</h3>
           <p>Enter your meter readings and service interval to see what’s due and how much riding time or distance remains.</p>
           <a class="btn btn-secondary" href={serviceCalculatorPath}>Use the Service Calculator</a>
+        </article>
+        <article class="resource-card">
+          <h3>Engine Hours vs. Mileage</h3>
+          <p>Know which reading to record for each service, and use your owner’s manual to work out when the job is due.</p>
+          <a class="btn btn-secondary" href={engineHoursGuidePath}>Read the Guide</a>
+        </article>
+        <article class="resource-card">
+          <h3>Maintenance Checklist</h3>
+          <p>Use a one-page checklist for pre-ride checks, post-ride upkeep, and work due on your service schedule.</p>
+          <a class="btn btn-secondary" href={maintenanceChecklistPath}>Get the Checklist</a>
         </article>
       </div>
     </div>

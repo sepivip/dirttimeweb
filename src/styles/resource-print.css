@@ -1,0 +1,59 @@
+.resource-print-only {
+  display: none;
+}
+
+@page {
+  margin: 0.5in;
+}
+
+@media print {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  body > :not(main),
+  main > :not(.resource-print-sheet),
+  .resource-print-sheet .resource-screen-only {
+    display: none !important;
+  }
+
+  .resource-print-sheet,
+  .resource-print-only {
+    display: block;
+  }
+
+  .resource-print-sheet {
+    font: 10pt/1.35 system-ui, sans-serif;
+  }
+
+  .print-sheet-header h2 {
+    margin-bottom: 4pt;
+    font-size: 22pt;
+  }
+
+  .print-brand {
+    font-weight: 700;
+  }
+
+  .print-bike-details {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24pt;
+    margin-block: 14pt;
+  }
+
+  .print-bike-details dd {
+    height: 18pt;
+    border-bottom: 1pt solid black;
+  }
+
+  .print-source {
+    margin-top: 12pt;
+    font-size: 9pt;
+  }
+}

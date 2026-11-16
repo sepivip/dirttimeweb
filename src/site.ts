@@ -1,5 +1,7 @@
 export const maintenanceLogPath = "/guides/dirt-bike-maintenance-log/";
 export const serviceCalculatorPath = "/tools/service-interval-calculator/";
+export const engineHoursGuidePath = "/guides/engine-hours-vs-mileage/";
+export const maintenanceChecklistPath = "/guides/dirt-bike-maintenance-checklist/";
 
 export const pages = {
   "/": {
@@ -29,6 +31,14 @@ export const pages = {
   [serviceCalculatorPath]: {
     title: "Dirt Bike Service Interval Calculator | DIRTTIME",
     description: "Calculate your next dirt bike service from the current reading, last service reading, and your chosen interval in engine hours, miles, or kilometers.",
+  },
+  [engineHoursGuidePath]: {
+    title: "Engine Hours vs. Mileage for Dirt Bike Maintenance | DIRTTIME",
+    description: "Learn what engine hours and mileage measure, when to track each, and how to work out your dirt bike’s next service from its owner’s manual.",
+  },
+  [maintenanceChecklistPath]: {
+    title: "Printable Dirt Bike Maintenance Checklist | DIRTTIME",
+    description: "Print a one-page dirt bike maintenance checklist for before rides, after rides, and scheduled service, with space for notes.",
   },
 } as const;
 

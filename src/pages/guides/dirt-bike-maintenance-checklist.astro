@@ -1,0 +1,93 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import PrintResourceButton from "../../components/PrintResourceButton.astro";
+import { engineHoursGuidePath, maintenanceChecklistPath, maintenanceLogPath, serviceCalculatorPath } from "../../site";
+import "../../styles/resources.css";
+import "../../styles/resource-print.css";
+import "../../styles/checklist-print.css";
+
+const groups = [
+  {
+    id: "before-ride",
+    title: "Before Each Ride",
+    checks: [
+      { name: "Tires and wheels", detail: "Check tire pressure against your manual. Look for damage and loose spokes where fitted." },
+      { name: "Brakes and controls", detail: "Check both brakes, steering movement, and that the throttle returns freely." },
+      { name: "Drive chain", detail: "Check condition, lubrication, and slack against your manual." },
+      { name: "Fluids and leaks", detail: "Check fuel, oil, and coolant as applicable. Look for leaks." },
+      { name: "Loose or damaged parts", detail: "Look over the bike, including the controls, footpegs, and visible hardware. Correct problems before riding." },
+    ],
+  },
+  {
+    id: "after-ride",
+    title: "After Each Ride",
+    checks: [
+      { name: "Clean the bike", detail: "Let it cool, then clear mud and grit using the cleaning instructions in your manual." },
+      { name: "Check the air filter", detail: "Pay extra attention after dusty or wet rides. Service it as the manual directs." },
+      { name: "Look for new damage", detail: "Check for leaks, loose hardware, or wear you noticed during the ride." },
+      { name: "Record the ride", detail: "Write down the date and meter reading. Note anything to fix before the next ride." },
+    ],
+  },
+  {
+    id: "scheduled-service",
+    title: "Scheduled Service",
+    checks: [
+      { name: "Review what is due", detail: "Check hours, distance, and dates against the schedule for your model and year." },
+      { name: "Complete the due work", detail: "Follow the manual for tasks such as oil and filter service, and have a qualified mechanic handle work beyond your tools or experience." },
+      { name: "Update the log", detail: "Record the work, parts, date, and meter reading, then write down the next due reading or date." },
+    ],
+  },
+];
+---
+<SiteLayout route={maintenanceChecklistPath}>
+  <section class="page-header resource-header">
+    <div class="container">
+      <h1>Printable Dirt Bike Maintenance Checklist</h1>
+      <p class="subtitle">Check the bike before you ride, note what needs attention afterward, and keep up with scheduled service.</p>
+    </div>
+  </section>
+
+  <section class="page-content resource-print-sheet checklist-sheet" aria-label="Dirt bike maintenance checklist">
+    <div class="container resource-stack">
+      <section class="resource-card resource-screen-only" aria-labelledby="get-checklist-title">
+        <h2 id="get-checklist-title">Print a Copy for the Garage</h2>
+        <p>The one-page sheet has checkboxes, a space for the bike and date, and room for notes. Use your bike’s manual for procedures and specifications.</p>
+        <div class="resource-actions">
+          <PrintResourceButton label="Print Checklist" primary />
+        </div>
+        <noscript><p>Use your browser’s Print command to print the checklist.</p></noscript>
+      </section>
+
+      <header class="resource-print-only print-sheet-header">
+        <p class="print-brand">DIRTTIME</p>
+        <h2>Dirt Bike Maintenance Checklist</h2>
+        <p>Use your bike’s owner’s manual for procedures, specifications, and intervals.</p>
+        <dl class="print-bike-details">
+          <div><dt>Bike (make, model, year)</dt><dd></dd></div>
+          <div><dt>Date</dt><dd></dd></div>
+        </dl>
+      </header>
+
+      {groups.map(({ id, title, checks }) => (
+        <section class="resource-card checklist-group" aria-labelledby={id}>
+          <h2 id={id}>{title}</h2>
+          <ul class="resource-list checklist-items">
+            {checks.map(({ name, detail }) => <li><span><strong>{name}.</strong> {detail}</span></li>)}
+          </ul>
+        </section>
+      ))}
+
+      <section class="resource-card resource-screen-only" aria-labelledby="checklist-next-title">
+        <h2 id="checklist-next-title">Record the Work and Plan the Next Service</h2>
+        <p>Use the <a href={maintenanceLogPath}>maintenance log</a> for completed work and the <a href={serviceCalculatorPath}>service interval calculator</a> for your next due reading. See <a href={engineHoursGuidePath}>engine hours vs. mileage</a> for help choosing the unit in your schedule.</p>
+        <p class="resource-note">For an example of what a manufacturer checks, see the pre-ride inspection and maintenance sections of the <a href="https://cdn.powersports.honda.com/documentum/MWOM/ml.remawmom.ak952323omen.pdf">Honda CRF250R/RX owner’s manual</a>.</p>
+      </section>
+
+      <section class="resource-print-only checklist-notes" aria-label="Notes for the next ride">
+        <h2>Notes for the Next Ride</h2>
+        {Array.from({ length: 6 }, () => <div class="checklist-notes-line" aria-hidden="true"></div>)}
+        <p class="print-source">dirttime.xyz{maintenanceChecklistPath}</p>
+      </section>
+    </div>
+  </section>
+</SiteLayout>

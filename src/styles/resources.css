@@ -110,7 +110,7 @@
 
 .calculator-form[hidden],
 .calculator-next[hidden],
-[data-print-log][hidden] {
+[data-print-resource][hidden] {
   display: none;
 }
 

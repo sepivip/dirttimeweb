@@ -1,0 +1,51 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import { engineHoursGuidePath, maintenanceChecklistPath, maintenanceLogPath, serviceCalculatorPath } from "../../site";
+import "../../styles/resources.css";
+---
+<SiteLayout route={engineHoursGuidePath}>
+  <section class="page-header resource-header">
+    <div class="container">
+      <h1>Engine Hours vs. Mileage on a Dirt Bike</h1>
+      <p class="subtitle">Engine hours measure how long the engine runs. Mileage measures how far the bike travels. Use the unit your owner’s manual lists for each service task.</p>
+    </div>
+  </section>
+
+  <article class="page-content" aria-label="Guide to tracking engine hours and mileage">
+    <div class="container resource-stack">
+      <div class="resource-grid">
+        <section class="resource-card" aria-labelledby="engine-hours-title">
+          <h2 id="engine-hours-title">What Engine Hours Measure</h2>
+          <p>An engine hour is 60 minutes of engine runtime, including idling. A slow loop through tight terrain and a fast loop can each add 0.5 hours even if they cover very different distances.</p>
+          <p>Read the bike’s engine hour counter or hour meter. If you have to estimate runtime, mark it as an estimate in your log.</p>
+        </section>
+        <section class="resource-card" aria-labelledby="mileage-title">
+          <h2 id="mileage-title">What Mileage Measures</h2>
+          <p>Mileage is distance traveled, recorded in miles or kilometers. Use the total odometer reading so you can compare it with the reading from the last service.</p>
+          <p>Keep the unit consistent. An interval in kilometers needs readings in kilometers. Engine hours and distance have no fixed conversion.</p>
+        </section>
+      </div>
+
+      <section class="resource-card" aria-labelledby="choose-unit-title">
+        <h2 id="choose-unit-title">Choose the Unit for Each Task</h2>
+        <ol class="resource-list">
+          <li><strong>Find the schedule for your exact model and year.</strong> As examples, the <a href="https://cdn.powersports.honda.com/documentum/MWOM/ml.remawmom.ak952323omen.pdf">Honda CRF250R/RX manual</a> lists races or hours for many services, and the <a href="https://cdn.powersports.honda.com/documentum/MWOM/ml.remawmom.2021_crf300l_owner_s_manual__2_.pdf">2021 Honda CRF300L manual</a> uses odometer readings and gives calendar limits for some items.</li>
+          <li><strong>Read the notes for the task.</strong> Look for break-in service, tougher riding conditions, and calendar limits. If the manual says to service at either of two limits, use the first limit you reach.</li>
+          <li><strong>Record the date and reading when the work is done.</strong> Track dates separately for calendar limits and keep both readings if different tasks use different units.</li>
+        </ol>
+      </section>
+
+      <section class="resource-card" aria-labelledby="next-service-title">
+        <h2 id="next-service-title">Work Out the Next Due Reading</h2>
+        <p>For a repeating interval counted from the last service, add the interval to the reading at that service. Then subtract your current reading to see what remains. If your manual lists a fixed meter reading for a service, use the listed reading.</p>
+        <dl class="log-example">
+          <div><dt>Hours Example</dt><dd>38 h + 10 h = 48 h due</dd></div>
+          <div><dt>At 43 h</dt><dd>5 h remaining</dd></div>
+          <div><dt>Mileage Example</dt><dd>1,200 mi + 600 mi = 1,800 mi due</dd></div>
+          <div><dt>At 1,350 mi</dt><dd>450 mi remaining</dd></div>
+        </dl>
+        <p>These numbers are examples. Use the <a href={serviceCalculatorPath}>service interval calculator</a> with your own readings, save the result in the <a href={maintenanceLogPath}>maintenance log</a>, and use the <a href={maintenanceChecklistPath}>printable checklist</a> between services.</p>
+      </section>
+    </div>
+  </article>
+</SiteLayout>

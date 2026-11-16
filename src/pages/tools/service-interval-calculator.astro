@@ -1,6 +1,6 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
-import { maintenanceLogPath, serviceCalculatorPath } from "../../site";
+import { engineHoursGuidePath, maintenanceChecklistPath, maintenanceLogPath, serviceCalculatorPath } from "../../site";
 import "../../styles/resources.css";
 
 const readings = [
@@ -59,11 +59,12 @@ const readings = [
 
       <section class="resource-card" aria-labelledby="example-calculation-title">
         <h2 id="example-calculation-title">How to Calculate Your Next Service</h2>
+        <p>Use the unit in your owner’s manual for the service you’re tracking. This calculation is for intervals counted from the last service. See <a href={engineHoursGuidePath}>engine hours vs. mileage</a> for help reading your schedule.</p>
         <ol class="resource-list">
           <li>Add the service interval to the reading at your last service. If you serviced the bike at <strong>38 hours</strong> and use a <strong>10-hour interval</strong>, the next service is due at <strong>48 hours</strong>.</li>
           <li>Subtract the current reading from the next due reading. At <strong>43 hours</strong>, you have <strong>5 hours remaining</strong>. At 48 hours service is due, and above 48 hours it’s overdue.</li>
         </ol>
-        <p>Save the service reading and next due point in the <a href={maintenanceLogPath}>dirt bike maintenance log</a>.</p>
+        <p>Save the next due point in the <a href={maintenanceLogPath}>dirt bike maintenance log</a>. Use the <a href={maintenanceChecklistPath}>printable maintenance checklist</a> to keep up with routine checks between scheduled services.</p>
       </section>
     </div>
   </section>
