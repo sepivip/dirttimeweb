@@ -8,7 +8,7 @@
   // ============================================
   // App Store click tracking for the live site.
   // Keep the public X Pixel and event IDs used by the existing campaign.
-  if (window.location.hostname === 'dirttime.xyz') {
+  if (window.location.hostname === 'dirttime.xyz' && document.currentScript?.dataset.siteMeasurement === 'enabled') {
     if (!window.twq) {
       const twq = (...args) => {
         if (twq.exe) twq.exe(...args);

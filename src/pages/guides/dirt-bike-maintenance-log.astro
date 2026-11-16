@@ -1,0 +1,84 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import { maintenanceLogPath, serviceCalculatorPath } from "../../site";
+import "../../styles/resources.css";
+import "../../styles/maintenance-print.css";
+
+const logColumns = ["Date", "Engine hours", "Odometer", "Work performed", "Parts and notes", "Next service due"];
+const blankRows = Array.from({ length: 12 });
+---
+<SiteLayout route={maintenanceLogPath}>
+  <section class="page-header resource-header">
+    <div class="container">
+      <h1>Dirt Bike Maintenance Log</h1>
+      <p class="subtitle">Keep track of what you serviced, the meter reading at the time, and when the work is due again.</p>
+    </div>
+  </section>
+
+  <section class="page-content" aria-label="Maintenance log and example">
+    <div class="container resource-stack">
+      <div class="resource-grid">
+        <section class="resource-card" aria-labelledby="blank-log-title">
+          <h2 id="blank-log-title">Get the Blank Log</h2>
+          <p>Print a one-page sheet for the garage or open the CSV in your spreadsheet. Keep one log per bike so its service history stays together.</p>
+          <div class="resource-actions">
+            <a class="btn btn-primary" href="/downloads/dirt-bike-maintenance-log.csv" download="dirt-bike-maintenance-log.csv">Download CSV</a>
+            <button class="btn btn-secondary" type="button" data-print-log hidden>Print Blank Log</button>
+          </div>
+          <noscript><p>Use your browser’s Print command to print the blank log.</p></noscript>
+        </section>
+
+        <section class="resource-card" aria-labelledby="example-log-title">
+          <h2 id="example-log-title">Example Service Entry</h2>
+          <dl class="log-example">
+            <div><dt>Date</dt><dd><time datetime="2026-04-12">April 12, 2026</time></dd></div>
+            <div><dt>Engine Hours</dt><dd>38 h</dd></div>
+            <div><dt>Odometer</dt><dd>146 km</dd></div>
+            <div><dt>Work Performed</dt><dd>Changed engine oil</dd></div>
+            <div><dt>Parts and Notes</dt><dd>Replaced the drain plug washer</dd></div>
+            <div><dt>Next Service Due</dt><dd>48 engine hours</dd></div>
+          </dl>
+          <p class="resource-note">Example only. Use the interval in the owner’s manual for your bike and riding conditions.</p>
+        </section>
+      </div>
+
+      <section class="resource-card" aria-labelledby="record-title">
+        <h2 id="record-title">What to Record After Each Service</h2>
+        <ul class="resource-list">
+          <li>Write down the date and the engine hours or odometer reading when the work was done. If you record distance, mark whether it’s in miles or kilometers.</li>
+          <li>Record the work and any parts used so you can find the details again when ordering replacements or handing over the bike.</li>
+          <li>Write the next due reading beside the service. Use the <a href={serviceCalculatorPath}>service interval calculator</a> to work it out from the interval you follow.</li>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+  <section class="maintenance-log-print" aria-labelledby="print-log-title">
+    <header>
+      <p class="print-brand">DIRTTIME</p>
+      <h2 id="print-log-title">Dirt Bike Maintenance Log</h2>
+      <p>Use one sheet per bike. Record the meter reading at each service.</p>
+    </header>
+    <dl class="print-bike-details">
+      <div><dt>Bike (make, model, year)</dt><dd></dd></div>
+      <div><dt>Odometer unit (mi or km)</dt><dd></dd></div>
+    </dl>
+    <table aria-label="Blank service entries">
+      <thead>
+        <tr>{logColumns.map((label) => <th scope="col">{label}</th>)}</tr>
+      </thead>
+      <tbody>
+        {blankRows.map(() => <tr>{logColumns.map(() => <td></td>)}</tr>)}
+      </tbody>
+    </table>
+    <p class="print-source">dirttime.xyz{maintenanceLogPath}</p>
+  </section>
+</SiteLayout>
+
+<script>
+  const printLog = document.querySelector<HTMLButtonElement>("[data-print-log]");
+  if (printLog) {
+    printLog.addEventListener("click", () => window.print());
+    printLog.hidden = false;
+  }
+</script>

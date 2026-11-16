@@ -1,5 +1,5 @@
 ---
-import { appStoreLink } from "../site";
+import { appStoreLink, maintenanceLogPath, serviceCalculatorPath } from "../site";
 ---
 <footer class="footer">
   <div class="container">
@@ -21,6 +21,11 @@ import { appStoreLink } from "../site";
           <h4>Support</h4>
           <a href="/support/">Help Center</a>
           <a href="/feedback/">Feedback</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href={maintenanceLogPath}>Maintenance Log</a>
+          <a href={serviceCalculatorPath}>Service Calculator</a>
         </div>
         <div class="footer-col">
           <h4>Legal</h4>

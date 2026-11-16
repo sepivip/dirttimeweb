@@ -1,6 +1,7 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
-import { appStoreBadgeLink } from "../site";
+import { appStoreBadgeLink, maintenanceLogPath, serviceCalculatorPath } from "../site";
+import "../styles/resources.css";
 ---
 <SiteLayout route="/">
   <!-- Hero -->
@@ -180,6 +181,26 @@ import { appStoreBadgeLink } from "../site";
           <span class="step-number">3</span>
           <h3>Log &amp; Ride</h3>
           <p>Log rides and get alerts when service is due.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="resources-title">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="section-title" id="resources-title">Dirt Bike Maintenance Resources</h2>
+      </header>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <h3>Maintenance Log</h3>
+          <p>Keep a record of service, parts, and engine hours. Start with a printable sheet or a CSV for your spreadsheet.</p>
+          <a class="btn btn-secondary" href={maintenanceLogPath}>Get the Maintenance Log</a>
+        </article>
+        <article class="resource-card">
+          <h3>Service Interval Calculator</h3>
+          <p>Enter your meter readings and service interval to see what’s due and how much riding time or distance remains.</p>
+          <a class="btn btn-secondary" href={serviceCalculatorPath}>Use the Service Calculator</a>
         </article>
       </div>
     </div>

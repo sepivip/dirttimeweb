@@ -5,9 +5,10 @@ import { appStoreUrl, pages, type Route } from "../site";
 
 interface Props {
   route?: Route;
+  measureAppStoreClicks?: boolean;
 }
 
-const { route } = Astro.props;
+const { route, measureAppStoreClicks = true } = Astro.props;
 const { title, description } = route ? pages[route] : {
   title: "Page Not Found | DIRTTIME",
   description: "Find the DIRTTIME homepage or get help with the app.",
@@ -63,7 +64,7 @@ const appSchema = {
 
     {isHome && <script is:inline type="application/ld+json" set:html={JSON.stringify(appSchema)} />}
     {isHome && <script is:inline src="/legacy-links.js"></script>}
-    <script is:inline src="/main.js" defer></script>
+    <script is:inline src="/main.js" data-site-measurement={measureAppStoreClicks ? "enabled" : "disabled"} defer></script>
     <noscript>
       <style is:inline>
         @media (max-width: 768px) {

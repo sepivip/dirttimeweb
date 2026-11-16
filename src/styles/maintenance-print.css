@@ -1,0 +1,82 @@
+.maintenance-log-print {
+  display: none;
+}
+
+@page {
+  margin: 0.5in;
+}
+
+@media print {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  body > :not(main),
+  main > :not(.maintenance-log-print) {
+    display: none !important;
+  }
+
+  .maintenance-log-print {
+    display: block;
+    font: 10pt/1.35 system-ui, sans-serif;
+  }
+
+  .maintenance-log-print h2 {
+    margin-bottom: 4pt;
+    font-size: 22pt;
+  }
+
+  .print-brand {
+    font-weight: 700;
+  }
+
+  .print-bike-details {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24pt;
+    margin-block: 14pt;
+  }
+
+  .print-bike-details dd {
+    height: 18pt;
+    border-bottom: 1pt solid black;
+  }
+
+  .maintenance-log-print table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .maintenance-log-print th,
+  .maintenance-log-print td {
+    padding: 5pt;
+    border: 0.75pt solid black;
+    text-align: left;
+  }
+
+  .maintenance-log-print th:nth-child(1) { width: 12%; }
+  .maintenance-log-print th:nth-child(2) { width: 11%; }
+  .maintenance-log-print th:nth-child(3) { width: 13%; }
+  .maintenance-log-print th:nth-child(4) { width: 25%; }
+  .maintenance-log-print th:nth-child(5) { width: 23%; }
+  .maintenance-log-print th:nth-child(6) { width: 16%; }
+
+  .maintenance-log-print tr {
+    break-inside: avoid;
+  }
+
+  .maintenance-log-print td {
+    height: 0.58in;
+  }
+
+  .print-source {
+    margin-top: 12pt;
+    font-size: 9pt;
+  }
+}

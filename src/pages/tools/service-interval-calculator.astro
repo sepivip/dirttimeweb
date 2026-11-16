@@ -1,0 +1,77 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import { maintenanceLogPath, serviceCalculatorPath } from "../../site";
+import "../../styles/resources.css";
+
+const readings = [
+  { id: "current-reading", label: "Current Meter Reading", example: "43" },
+  { id: "last-service", label: "Reading at Last Service", example: "38" },
+  { id: "service-interval", label: "Service Interval", example: "10" },
+];
+---
+<SiteLayout route={serviceCalculatorPath} measureAppStoreClicks={false}>
+  <section class="page-header resource-header">
+    <div class="container">
+      <h1>Dirt Bike Service Interval Calculator</h1>
+      <p class="subtitle">Calculate the next service point and see how many engine hours, miles, or kilometers you have left.</p>
+    </div>
+  </section>
+
+  <section class="page-content" aria-label="Service interval calculator and worked example">
+    <div class="container resource-stack">
+      <div class="resource-grid calculator-grid">
+        <section class="resource-card" aria-labelledby="calculator-inputs-title">
+          <h2 id="calculator-inputs-title">Service Readings</h2>
+          <p id="calculator-fallback">Enable JavaScript to use the calculator, or follow the worked example below.</p>
+          <form class="calculator-form" id="service-calculator" autocomplete="off" novalidate hidden>
+            <p id="reading-help">All fields are required. Use the same unit throughout and enter up to two decimal places without thousands separators.</p>
+            <div class="calculator-field">
+              <label for="service-unit">Unit</label>
+              <select id="service-unit" required>
+                <option value="hours">Engine Hours</option>
+                <option value="miles">Miles</option>
+                <option value="kilometers">Kilometers</option>
+              </select>
+            </div>
+            {readings.map(({ id, label, example }) => (
+              <div class="calculator-field">
+                <label for={id}>{label}</label>
+                <input id={id} type="text" inputmode="decimal" required spellcheck="false" placeholder={example} aria-describedby={`reading-help ${id}-error`}>
+                <p class="calculator-error" id={`${id}-error`} hidden></p>
+              </div>
+            ))}
+            <button class="btn btn-primary" type="submit">Calculate Next Service</button>
+          </form>
+        </section>
+
+        <section class="resource-card" id="calculator-summary" aria-labelledby="calculator-result-title" hidden>
+          <h2 id="calculator-result-title">Service Status</h2>
+          <div class="calculator-result" role="status" aria-atomic="true">
+            <p id="service-status">Enter your readings to see when service is due.</p>
+            <dl class="calculator-next" id="service-result" hidden>
+              <dt>Next Service At</dt>
+              <dd id="next-service-reading"></dd>
+            </dl>
+          </div>
+          <p class="resource-note">Use the interval from your owner’s manual or service schedule. The calculator uses the interval you enter.</p>
+        </section>
+      </div>
+
+      <section class="resource-card" aria-labelledby="example-calculation-title">
+        <h2 id="example-calculation-title">How to Calculate Your Next Service</h2>
+        <ol class="resource-list">
+          <li>Add the service interval to the reading at your last service. If you serviced the bike at <strong>38 hours</strong> and use a <strong>10-hour interval</strong>, the next service is due at <strong>48 hours</strong>.</li>
+          <li>Subtract the current reading from the next due reading. At <strong>43 hours</strong>, you have <strong>5 hours remaining</strong>. At 48 hours service is due, and above 48 hours it’s overdue.</li>
+        </ol>
+        <p>Save the service reading and next due point in the <a href={maintenanceLogPath}>dirt bike maintenance log</a>.</p>
+      </section>
+    </div>
+  </section>
+</SiteLayout>
+
+<script>
+  import { initializeServiceCalculator } from "../../scripts/service-calculator";
+
+  const form = document.querySelector<HTMLFormElement>("#service-calculator");
+  if (form) initializeServiceCalculator(form);
+</script>

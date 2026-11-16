@@ -1,3 +1,6 @@
+export const maintenanceLogPath = "/guides/dirt-bike-maintenance-log/";
+export const serviceCalculatorPath = "/tools/service-interval-calculator/";
+
 export const pages = {
   "/": {
     title: "Dirt Bike Maintenance Tracker for iPhone & iPad | DIRTTIME",
@@ -18,6 +21,14 @@ export const pages = {
   "/terms/": {
     title: "Terms of Service | DIRTTIME",
     description: "Read the terms for using the DIRTTIME dirt bike maintenance tracker.",
+  },
+  [maintenanceLogPath]: {
+    title: "Printable Dirt Bike Maintenance Log & CSV Template | DIRTTIME",
+    description: "Print a blank dirt bike maintenance log or download the CSV template. See what to record for engine hours, parts, work performed, and the next service.",
+  },
+  [serviceCalculatorPath]: {
+    title: "Dirt Bike Service Interval Calculator | DIRTTIME",
+    description: "Calculate your next dirt bike service from the current reading, last service reading, and your chosen interval in engine hours, miles, or kilometers.",
   },
 } as const;
 
