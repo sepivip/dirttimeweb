@@ -10,6 +10,11 @@ function toHundredths(raw: string): number | undefined {
   return Math.round(Number(reading.replace(",", ".")) * 100);
 }
 
+function focusInvalidReading(field: HTMLInputElement) {
+  field.focus({ preventScroll: true });
+  field.closest(".calculator-field")?.scrollIntoView({ block: "nearest" });
+}
+
 export function initializeServiceCalculator(form: HTMLFormElement) {
   const currentReading = form.querySelector<HTMLInputElement>("#current-reading")!;
   const lastService = form.querySelector<HTMLInputElement>("#last-service")!;
@@ -63,14 +68,14 @@ export function initializeServiceCalculator(form: HTMLFormElement) {
 
     if (current === undefined || last === undefined || interval === undefined) {
       status.textContent = "Check the highlighted fields and calculate again.";
-      firstInvalid?.focus();
+      if (firstInvalid) focusInvalidReading(firstInvalid);
       return;
     }
 
     if (current < last) {
       status.textContent = "Check the meter readings and calculate again.";
       showError(currentReading, "The current reading must be at least the reading at your last service.");
-      currentReading.focus();
+      focusInvalidReading(currentReading);
       return;
     }
 

@@ -116,6 +116,7 @@
 
 .calculator-field {
   gap: 8px;
+  scroll-margin-block: 104px 16px;
 }
 
 .calculator-field label {
