@@ -6,6 +6,3 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://dirttime.xyz/sitemap.xml
-
-# LLM-friendly content
-LLMs-txt: https://dirttime.xyz/llms.txt

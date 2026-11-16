@@ -2,13 +2,13 @@
 
 > Motorcycle and dirt bike maintenance tracking app for iOS
 
-DIRTTIME is a free iOS application designed for motorcycle and dirt bike enthusiasts to track maintenance schedules, log riding hours and mileage, and receive service alerts.
+DIRTTIME is a paid app for iPhone and iPad designed for motorcycle and dirt bike enthusiasts to track maintenance schedules, log riding hours and mileage, and receive service alerts.
 
 ## App Overview
 
 - **Name:** DIRTTIME
 - **Platform:** iOS (iPhone, iPad)
-- **Price:** Free
+- **Price:** See the App Store for current pricing in your region
 - **Category:** Utilities / Automotive / Motorcycle
 
 ## Supported Brands
@@ -60,9 +60,9 @@ Also works with street motorcycles, adventure bikes, and ATVs/quads.
 ## Links
 
 - **Website:** https://dirttime.xyz
-- **App Store:** https://apps.apple.com/us/app/dirttime-bike-maintenance/id6752694574
-- **Support:** https://dirttime.xyz/#support
-- **Feedback:** https://dirttime.xyz/#feedback
+- **App Store:** https://apps.apple.com/us/app/dirttime-dirtbike-maintenance/id6752694574
+- **Support:** https://dirttime.xyz/support/
+- **Feedback:** https://dirttime.xyz/feedback/
 
 ## Contact
 
@@ -70,5 +70,5 @@ For support inquiries, visit the support page or submit feedback through the fee
 
 ## Legal
 
-- Privacy Policy: https://dirttime.xyz/#privacy
-- Terms of Service: https://dirttime.xyz/#terms
+- Privacy Policy: https://dirttime.xyz/privacy/
+- Terms of Service: https://dirttime.xyz/terms/

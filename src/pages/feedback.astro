@@ -1,0 +1,22 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeZ3ueMiClBQxvc-g0rqhQhVFReEPRXngsp38OJ5bmMNSantw/viewform";
+---
+<SiteLayout route="/feedback/">
+  <section class="page-header">
+    <div class="container">
+      <h1>Feedback</h1>
+      <p class="subtitle">Help us make DIRTTIME better</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+      <div class="feedback-card">
+        <p class="feedback-intro">Ask a question, report a bug, or suggest a feature using our Google Form.</p>
+        <a class="btn btn-primary" href={formUrl} target="_blank" rel="noopener">Open Feedback Form</a>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

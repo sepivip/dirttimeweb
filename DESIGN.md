@@ -122,7 +122,7 @@ spacing:
 components:
   button-primary:
     backgroundColor: "{colors.accent}"
-    textColor: "{colors.text}"
+    textColor: "{colors.bg}"
     typography: "{typography.button}"
     rounded: "{rounded.md}"
     padding: "16px 28px"
@@ -292,7 +292,7 @@ Rule: if a surface contains block text, use `lg` or `xl`. If it's a pill-shaped 
 
 All components reference tokens — never hardcode a color, radius, or font. See the `components` block in the frontmatter for the mapping.
 
-- **Button — Primary** — Solid accent fill, white text, `{rounded.md}`, glow shadow on hover, `translateY(-2px)` on hover.
+- **Button — Primary** — Solid accent fill, near-black text, `{rounded.md}`, glow shadow on hover, `translateY(-2px)` on hover. The mobile menu download button uses the same color pairing.
 - **Button — Secondary** — `rgba(255,255,255,0.06)` fill, 1px border `{colors.border}`, white text. Borders promote to `border-hover` on hover.
 - **Nav CTA (App Store)** — Inverted: white fill, black text, pill shape. Reserved for the single strongest action on the page.
 - **Header shell** — Floating pill, `rgba(13,13,13,0.85)` with `backdrop-filter: blur(24px) saturate(180%)`. Fixed, top-anchored, `border-radius: {rounded.full}`.

@@ -1,8 +1,10 @@
 # Dirt Time Web
 
 ## Project Structure
-- Static HTML website with CSS
-- Main pages: index.html, privacy.html, support.html, terms.html
+- Astro builds static HTML from `src/pages/` with shared layouts in `src/layouts/`.
+- `public/` contains assets, styles, and browser scripts served at their original public paths.
+- Run `npm ci` and `npm run dev` locally. `npm run build` writes the Pages artifact to `dist/`.
+- `.github/workflows/pages.yml` builds pull requests and publishes `master` through GitHub Actions. The custom domain `dirttime.xyz` and HTTPS enforcement are configured in the repository's Pages settings.
 
 ## Repo Is Public — Audit Before Pushing
 

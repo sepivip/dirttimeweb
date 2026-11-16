@@ -1,0 +1,157 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+<SiteLayout route="/support/">
+  <section class="page-header">
+    <div class="container">
+      <h1>Support</h1>
+      <p class="subtitle">We're here to help you keep your bikes running smoothly</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+      <div class="content-card">
+        <!-- Contact Card -->
+        <div class="contact-card">
+          <h2>Contact Us</h2>
+          <p>Have a question, found a bug, or want to suggest a feature? We'd love to hear from you.</p>
+          <a href="/feedback/" class="btn btn-primary" style="margin-top: 16px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+            </svg>
+            Send Feedback
+          </a>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <details class="faq-item" name="support-faq">
+            <summary class="faq-question">How do I add a new bike?</summary>
+            <div class="faq-answer">
+              <p>Tap the "+" button on the Garage screen to add a new bike. Enter your bike's details including make, model, year, and current hours/mileage. You can also add a photo to help identify your bike at a glance.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" name="support-faq">
+            <summary class="faq-question">How do maintenance intervals work?</summary>
+            <div class="faq-answer">
+              <p>DIRTTIME supports four types of maintenance intervals:</p>
+              <ul>
+                <li><strong>Hours:</strong> Service is due after a certain number of engine hours (e.g., oil change every 15 hours)</li>
+                <li><strong>Distance:</strong> Service is due after traveling a certain distance in km or miles</li>
+                <li><strong>Days:</strong> Service is due after a certain number of days (e.g., annual inspections)</li>
+                <li><strong>Per Ride:</strong> Tasks that should be checked before or after every ride</li>
+              </ul>
+              <p>You can customize intervals based on your owner's manual or riding conditions.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" name="support-faq">
+            <summary class="faq-question">What do the status colors mean?</summary>
+            <div class="faq-answer">
+              <p>DIRTTIME uses three status indicators:</p>
+              <ul>
+                <li><strong class="status-ok">OK (Green):</strong> Service is not yet due. You're good to ride!</li>
+                <li><strong class="status-warn">Due Soon (Yellow):</strong> Service will be due soon (within 90% of the interval). Plan to service soon.</li>
+                <li><strong class="status-error">Overdue (Red):</strong> Service is past due. Address this before your next ride.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-item" name="support-faq">
+            <summary class="faq-question">How do terrain multipliers work?</summary>
+            <div class="faq-answer">
+              <p>Riding in harsh conditions wears on your bike more than normal trail riding. DIRTTIME adjusts maintenance calculations based on terrain:</p>
+              <ul>
+                <li><strong>Sand:</strong> 70% multiplier (1 hour in sand = 1.4 hours of wear)</li>
+                <li><strong>Mud & Water:</strong> 80% multiplier (1 hour = 1.25 hours of wear)</li>
+                <li><strong>Racing:</strong> 85% multiplier (1 hour = 1.17 hours of wear)</li>
+              </ul>
+              <p>This helps ensure you service your bike more frequently when riding in demanding conditions.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" name="support-faq">
+            <summary class="faq-question">Can I switch between metric and imperial units?</summary>
+            <div class="faq-answer">
+              <p>Yes! Go to Settings and toggle between kilometers and miles. All your existing data will be converted automatically. You can switch anytime.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" name="support-faq">
+            <summary class="faq-question">How do I set up home screen widgets?</summary>
+            <div class="faq-answer">
+              <p>DIRTTIME includes iOS widgets that show your bike's maintenance status at a glance:</p>
+              <ol>
+                <li>Long-press on your home screen until apps jiggle</li>
+                <li>Tap the "+" button in the top-left corner</li>
+                <li>Search for "DIRTTIME" or scroll to find it</li>
+                <li>Choose your preferred widget size</li>
+                <li>Tap "Add Widget"</li>
+              </ol>
+              <p>The widget will automatically update to show maintenance status for your bikes.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" name="support-faq">
+            <summary class="faq-question">Is my data backed up?</summary>
+            <div class="faq-answer">
+              <p>DIRTTIME stores your data on your device. In <strong>Settings</strong>, tap <strong>Backup to iCloud</strong> and save the ZIP file to iCloud Drive or Files. On the device where you want to use the backup, tap <strong>Restore from Backup</strong> and choose the saved ZIP file.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" name="support-faq">
+            <summary class="faq-question">Can I track multiple bikes?</summary>
+            <div class="faq-answer">
+              <p>Yes! DIRTTIME supports unlimited bikes. Each bike has its own maintenance schedule, service history, and ride logs. Perfect for families with multiple riders or racers with different bikes for different conditions.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" name="support-faq">
+            <summary class="faq-question">How do I delete a bike or reset data?</summary>
+            <div class="faq-answer">
+              <p>To delete a bike, go to the bike's detail page, scroll to the bottom, and tap "Delete Bike." This will remove the bike and all associated service and ride logs.</p>
+              <p>To reset all app data, uninstall and reinstall the app. This cannot be undone.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" name="support-faq">
+            <summary class="faq-question">Will there be Android support?</summary>
+            <div class="faq-answer">
+              <p>DIRTTIME is currently available on iOS only. We're evaluating Android support for the future. Sign up for our mailing list or follow us on social media for updates!</p>
+            </div>
+          </details>
+        </div>
+
+        <!-- Tips Section -->
+        <h2 style="margin-top: 48px;">Tips & Troubleshooting</h2>
+
+        <div class="tips-grid">
+          <div class="tip-card">
+            <h3>App running slowly?</h3>
+            <p>Try closing and reopening the app. If issues persist, restarting your device often helps. Make sure you're running the latest version of iOS and DIRTTIME.</p>
+          </div>
+
+          <div class="tip-card">
+            <h3>Widget not updating?</h3>
+            <p>Widgets refresh periodically based on iOS guidelines. Open the main app to force a data sync with the widget. If the widget still shows old data, try removing and re-adding it.</p>
+          </div>
+
+          <div class="tip-card">
+            <h3>Want to suggest a feature?</h3>
+            <p>We're always looking to improve! Use our <a href="/feedback/">feedback form</a> to send your feature requests. We read every submission.</p>
+          </div>
+
+          <div class="tip-card">
+            <h3>Found a bug?</h3>
+            <p>Please report bugs with: what you were doing, what you expected, what happened, and your device/iOS version. Screenshots help!</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</SiteLayout>

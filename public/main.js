@@ -1,90 +1,35 @@
 /**
- * DIRTTIME - App Landing Page
+ * DIRTTIME website interactions
  */
 
 (function() {
   'use strict';
 
   // ============================================
-  // SPA Router
-  // ============================================
-
-  const pages = {
-    home: document.getElementById('page-home'),
-    support: document.getElementById('page-support'),
-    feedback: document.getElementById('page-feedback'),
-    privacy: document.getElementById('page-privacy'),
-    terms: document.getElementById('page-terms')
-  };
-
-  function getPageFromHash() {
-    const hash = window.location.hash.slice(1);
-    if (hash && pages[hash]) {
-      return hash;
-    }
-    // Check for #features or other home page anchors
-    if (hash === 'features' || hash === '') {
-      return 'home';
-    }
-    return 'home';
-  }
-
-  function navigateTo(pageName, scrollToTop = true) {
-    // Hide all pages
-    Object.values(pages).forEach(page => {
-      if (page) page.classList.remove('active');
-    });
-
-    // Show the target page
-    if (pages[pageName]) {
-      pages[pageName].classList.add('active');
+  // App Store click tracking for the live site.
+  // Keep the public X Pixel and event IDs used by the existing campaign.
+  if (window.location.hostname === 'dirttime.xyz') {
+    if (!window.twq) {
+      const twq = (...args) => {
+        if (twq.exe) twq.exe(...args);
+        else twq.queue.push(args);
+      };
+      twq.version = '1.1';
+      twq.queue = [];
+      window.twq = twq;
+      const pixel = document.createElement('script');
+      pixel.async = true;
+      pixel.src = 'https://static.ads-twitter.com/uwt.js';
+      document.head.append(pixel);
     }
 
-    // Update active nav links
-    document.querySelectorAll('[data-nav]').forEach(link => {
-      link.removeAttribute('aria-current');
-      if (link.getAttribute('data-nav') === pageName) {
-        link.setAttribute('aria-current', 'page');
+    window.twq('config', 'rc2z0');
+    document.addEventListener('click', (event) => {
+      if (event.target.closest('a[data-app-store]')) {
+        window.twq('event', 'tw-rc2z0-rc307', {});
       }
     });
-
-    // Scroll to top for page changes
-    if (scrollToTop && pageName !== 'home') {
-      window.scrollTo({ top: 0, behavior: 'instant' });
-    }
-
-    // Update document title
-    const titles = {
-      home: 'DIRTTIME - Dirt Bike Maintenance Tracker',
-      support: 'Support - DIRTTIME',
-      feedback: 'Feedback - DIRTTIME',
-      privacy: 'Privacy Policy - DIRTTIME',
-      terms: 'Terms of Service - DIRTTIME'
-    };
-    document.title = titles[pageName] || titles.home;
   }
-
-  // Handle hash changes
-  window.addEventListener('hashchange', () => {
-    const page = getPageFromHash();
-    navigateTo(page);
-  });
-
-  // Initial page load
-  navigateTo(getPageFromHash(), false);
-
-  // Handle navigation clicks
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('[data-nav]');
-    if (link) {
-      const navTarget = link.getAttribute('data-nav');
-      if (pages[navTarget]) {
-        e.preventDefault();
-        window.location.hash = navTarget === 'home' ? '' : navTarget;
-        navigateTo(navTarget);
-      }
-    }
-  });
 
   // ============================================
   // Mobile Navigation
@@ -123,68 +68,17 @@
   }
 
   // ============================================
-  // Smooth Scroll (for in-page anchors like #features)
-  // ============================================
-
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href === '#') return;
-
-      // Skip if this is a nav link (handled above)
-      if (this.hasAttribute('data-nav')) return;
-
-      const targetId = href.slice(1);
-
-      // If it's a page anchor, let the router handle it
-      if (pages[targetId]) return;
-
-      e.preventDefault();
-      const target = document.querySelector(href);
-
-      if (target) {
-        const headerEl = document.querySelector('.header');
-        const headerHeight = headerEl ? headerEl.getBoundingClientRect().height + 24 : 80;
-        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-      }
-    });
-  });
-
-  // ============================================
-  // FAQ Accordion
-  // ============================================
-
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const item = button.parentElement;
-      const answer = item.querySelector('.faq-answer');
-      const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
-      // Close all other items
-      document.querySelectorAll('.faq-item').forEach(faq => {
-        faq.classList.remove('active');
-        faq.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-        const faqAnswer = faq.querySelector('.faq-answer');
-        if (faqAnswer) faqAnswer.setAttribute('hidden', '');
-      });
-
-      // Toggle current item
-      if (!isExpanded) {
-        item.classList.add('active');
-        button.setAttribute('aria-expanded', 'true');
-        answer.removeAttribute('hidden');
-      }
-    });
-  });
-
-  // ============================================
   // Screenshot Slider (duplicate for infinite scroll)
   // ============================================
 
   const slider = document.querySelector('.screenshots-slider');
-  if (slider) {
-    slider.innerHTML = slider.innerHTML + slider.innerHTML;
+  if (slider && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const copies = Array.from(slider.children, (screenshot) => {
+      const copy = screenshot.cloneNode(true);
+      copy.setAttribute('aria-hidden', 'true');
+      return copy;
+    });
+    slider.append(...copies);
   }
 
   // ============================================

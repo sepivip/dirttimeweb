@@ -70,6 +70,27 @@ body {
   outline-offset: 2px;
 }
 
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 24px;
+  z-index: 101;
+  padding: 8px 16px;
+  color: var(--color-text);
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-md);
+  transform: translateY(calc(-100% - 16px));
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+#features,
+#website-tracking {
+  scroll-margin-top: 104px;
+}
+
 .container {
   width: 100%;
   max-width: var(--container-max);
@@ -206,11 +227,11 @@ body {
 }
 
 .nav-toggle[aria-expanded="true"] span:first-child {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: translateY(3.5px) rotate(45deg);
 }
 
 .nav-toggle[aria-expanded="true"] span:last-child {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: translateY(-3.5px) rotate(-45deg);
 }
 
 .mobile-menu {
@@ -248,7 +269,7 @@ body {
 
 .mobile-menu a.mobile-cta {
   background: var(--color-accent);
-  color: var(--color-text);
+  color: var(--color-bg);
   font-weight: 600;
   text-align: center;
   margin-top: 8px;
@@ -256,7 +277,7 @@ body {
 
 .mobile-menu a.mobile-cta:hover {
   background: var(--color-accent-hover);
-  color: var(--color-text);
+  color: var(--color-bg);
 }
 
 /* ============================================
@@ -324,7 +345,7 @@ body {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.75rem, 8vw, 5rem);
+  font-size: clamp(2rem, 7.5vw, 4rem);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -370,7 +391,7 @@ body {
 
 .btn-primary {
   background: var(--color-accent);
-  color: var(--color-text);
+  color: var(--color-bg);
   box-shadow: 0 0 0 0 var(--color-accent-glow);
 }
 
@@ -1088,6 +1109,10 @@ body {
     transition-duration: 0.01ms !important;
   }
 
+  html {
+    scroll-behavior: auto;
+  }
+
   .screenshots-slider {
     animation: none;
   }
@@ -1190,22 +1215,14 @@ strong.status-warn { color: var(--color-status-warn); }
 .status-error,
 strong.status-error { color: var(--color-status-error); }
 
-.content-card a {
+.content-card a:not(.btn) {
   color: var(--color-accent);
   text-decoration: none;
   transition: opacity 0.2s var(--ease-out);
 }
 
-.content-card a:hover {
+.content-card a:not(.btn):hover {
   opacity: 0.8;
-}
-
-.content-card a.btn {
-  color: var(--color-text);
-}
-
-.content-card a.btn:hover {
-  opacity: 1;
 }
 
 /* Support Page Specific */
@@ -1297,17 +1314,21 @@ strong.status-error { color: var(--color-status-error); }
   transition: transform 0.3s var(--ease-out);
 }
 
-.faq-question[aria-expanded="true"]::after {
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question:focus-visible {
+  outline-offset: -2px;
+}
+
+.faq-item[open] > .faq-question::after {
   transform: rotate(45deg);
 }
 
 .faq-answer {
   padding: 0 24px 20px;
   background: var(--color-surface);
-}
-
-.faq-answer[hidden] {
-  display: none;
 }
 
 .faq-answer p,
@@ -1449,6 +1470,7 @@ strong.status-error { color: var(--color-status-error); }
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: 48px;
+  text-align: center;
 }
 
 .feedback-intro {
@@ -1456,31 +1478,12 @@ strong.status-error { color: var(--color-status-error); }
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 32px;
-  text-align: center;
-}
-
-.form-container {
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  min-height: 600px;
-}
-
-.form-container iframe {
-  display: block;
-  width: 100%;
-  min-height: 800px;
-  border: none;
 }
 
 @media (max-width: 768px) {
   .feedback-card {
     padding: 32px 24px;
     border-radius: var(--radius-lg);
-  }
-
-  .form-container iframe {
-    min-height: 900px;
   }
 }
 
@@ -1491,34 +1494,6 @@ strong.status-error { color: var(--color-status-error); }
 
   .feedback-intro {
     font-size: 1rem;
-  }
-
-  .form-container iframe {
-    min-height: 1000px;
-  }
-}
-
-/* ============================================
-   SPA Page System
-   ============================================ */
-
-.page {
-  display: none;
-}
-
-.page.active {
-  display: block;
-  animation: pageIn 0.3s var(--ease-out);
-}
-
-@keyframes pageIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
